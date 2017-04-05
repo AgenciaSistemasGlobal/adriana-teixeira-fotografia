@@ -69,13 +69,6 @@
     </nav>
 
     <header id="carousel-header" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-header" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-header" data-slide-to="1"></li>
-            <li data-target="#carousel-header" data-slide-to="2"></li>
-        </ol>
-
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -118,22 +111,24 @@
                 </div>
             </div>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-header" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-header" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
     </header>
 
     <!-- About Section -->
     <section id="about" class="about-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>About Section</h1>
+                <div class="col-lg-6 bg-metade" style="background-image: url('./img/bg-quem-sou.jpg');"></div>
+                <div class="col-lg-6 quem-sou-content">
+                    <h2>Quem sou</h2>
+                    <p>
+                        Sou um parágrafo. Clique aqui para editar e adicionar o seu próprio texto. É fácil! Basta clicar em "Editar Texto" ou clicar duas vezes sobre mim e você poderá adicionar o seu próprio conteúdo e trocar fontes. Sinta-se à vontade para arrastar-me e soltar em qualquer lugar em sua página. Sou um ótimo lugar para você contar sua história e permitir que seus clientes saibam um pouco mais sobre você. 
+                    </p>
+                    <p>
+                        Este é um ótimo espaço para escrever um texto longo sobre a sua empresa e seus serviços. Você pode usar esse espaço para entrar em detalhes sobre a sua empresa.
+                    </p>
+                    <p>
+                        Fale sobre a sua equipe e sobre os serviços prestados por você. Conte aos seus visitantes sobre como teve a idéia de iniciar o seu negócio e o que o torna diferente de seus competidores. Faça com que sua empresa se destaque e mostre quem você é.
+                    </p>
                 </div>
             </div>
         </div>
@@ -141,25 +136,107 @@
 
     <!-- Services Section -->
     <section id="services" class="services-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>Services Section</h1>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/fashion" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/transport" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/city" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/food" alt="" class="img-responsive">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/city" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/food" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/fashion" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/transport" alt="" class="img-responsive">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/food" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/city" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/transport" alt="" class="img-responsive">
+                </div>
+                <div class="col-lg-3">
+                    <img src="http://lorempixel.com/400/200/fashion" alt="" class="img-responsive">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
+    <section id="frase" class="frase-section paralax">
+        <div class="container-fluid">
+            <h3>"Capturando os momentos de hoje, que vão supreender seu coração amanhã."</h3>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>Contact Section</h1>
+                <div class="col-lg-6 contato">
+                    <h2>Vamos Conversar</h2>
+                    <form class="form-horizontal" action="" method="post">
+                        <!-- Name input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input id="name" name="name" type="text" placeholder="Seu nome" class="form-control">
+                            </div>
+                        </div>
+
+                        <!-- Email input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input id="email" name="email" type="text" placeholder="Seu email" class="form-control">
+                            </div>
+                        </div>
+
+                        <!-- Message body -->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <textarea class="form-control" id="message" name="message" placeholder="Porfavor digite sua mensagem aqui..." rows="5"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Form actions -->
+                        <div class="form-group">
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+                <div class="col-lg-6 bg-metade" style="background-image: url('./img/bg-contato.jpg');"></div>
             </div>
         </div>
     </section>
+
+    <footer>
+        <a class="page-scroll to-top" href="#page-top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <p>Ir para o Topo</p>
+        </a>
+        <h5>2017 - 2018 Todos os direitos reservados. Só podia ser <a href="">Sistemas Global</a></h5>
+    </footer>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

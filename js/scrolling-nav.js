@@ -19,17 +19,17 @@ $(function() {
 });
 
 
-$('#carousel-header .fill').each(function() {
+/*$('#carousel-header .fill, .paralax').each(function() {
     var $obj = $(this);
     $(window).scroll(function() {
         var yPos = -($(window).scrollTop() / 15);
         var bgpos = '50% ' + yPos + 'px';
         $obj.css('background-position', bgpos);
     });
-});
+});*/
 
 $('.carousel').carousel({
-    interval: 5000
+    interval: false
 });
 
 new WOW().init();
