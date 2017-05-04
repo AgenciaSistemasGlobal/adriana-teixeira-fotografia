@@ -24,12 +24,13 @@ $('#carousel-header .fill, .paralax').each(function() {
     $(window).scroll(function() {
         var yPos = -($(window).scrollTop() / 5);
         var bgpos = '50% ' + yPos + 'px';
-        $obj.css('background-position', bgpos);
+        //$obj.css('background-position', bgpos);
     });
 });
 
 $('.carousel').carousel({
-    interval: 6000
+    /*interval: 6000*/
+    interval: false
 });
 
 new WOW().init();

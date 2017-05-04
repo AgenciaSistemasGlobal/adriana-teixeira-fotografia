@@ -14,6 +14,8 @@
                 <p>
                     Fale sobre a sua equipe e sobre os serviços prestados por você. Conte aos seus visitantes sobre como teve a idéia de iniciar o seu negócio e o que o torna diferente de seus competidores. Faça com que sua empresa se destaque e mostre quem você é.
                 </p>
+                <br>
+                <a href="#" class="btn btn-primary btn-lg">Conheça-me melhor<i class="fa fa-heart" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>

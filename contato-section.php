@@ -29,18 +29,20 @@
                     <!-- Form actions -->
                     <div class="form-group">
                         <div class="col-md-12 text-right">
-                            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Enviar Mensagem<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="col-lg-6 bg-metade" style="background-image: linear-gradient(rgba(255,255,255,.6, rgba(255,255,255,.1))), url('./img/bg-contato.jpg');">
+            <div class="col-lg-6 bg-metade" style="background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.1)), url('./img/bg-contato.jpg');">
+                <img src="./img/global-swirl-top.png" class="img-responsive"></img>
                 <ul class="infos-contatos">
                     <li>Av. Bernardino de Campos, 98</li>
                     <li>info@meusite.com</li>
                     <li>São Paulo, SP 12345-678</li>
                     <li>Tel: (11) 3456-7890</li>
                 </ul>
+                <img src="./img/global-swirl-top.png" class="img-responsive"></img>
             </div>
         </div>
     </div>

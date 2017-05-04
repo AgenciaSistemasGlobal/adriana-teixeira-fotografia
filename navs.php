@@ -30,6 +30,9 @@
                 <li>
                     <a class="page-scroll transition" href="#contact">Contato</a>
                 </li>
+                <li>
+                    <a href="#" class="btn btn-primary">Conheça-me melhor<i class="fa fa-heart" aria-hidden="true"></i></a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

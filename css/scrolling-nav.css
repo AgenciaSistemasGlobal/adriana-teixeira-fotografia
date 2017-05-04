@@ -62,28 +62,19 @@ html {
     top: 5px;
 }
 .frase-section {
-    height: 100%;
+    height: 400px;
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    background-attachment: fixed;
-    background-image: url('./../img/bg-frase-solta.jpg');
+    /* background-attachment: fixed; */
+    background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.6)), url('./../img/bg-frase-solta.jpg');
     position: relative;
-}
-.frase-section h3 {
-    font-size: 3vw;
     color: #fff;
-}
-.frase-section p {
-    color: #fff;
-}
-.frase-section .container-fluid {
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    width: 50%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
 }
 .carousel,
 .item,
@@ -105,7 +96,7 @@ html {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
 }
 .bg-metade {
     height: 500px;
@@ -114,15 +105,17 @@ html {
 }
 .quem-sou-content,
 .contato {
-    padding: 57px;
+    padding: 55px;
 }
 .quem-sou-content h2,
-.contato h2 {
+.contato h2,
+.services-section h2 {
     position: relative;
     margin-bottom: 45px;
 }
 .quem-sou-content h2:before,
-.contato h2:before {
+.contato h2:before,
+.services-section h2:before {
     content: '';
     width: 50px;
     height: 1px;
@@ -134,21 +127,23 @@ html {
     font-size: 16px;
 }
 .services-section .col-lg-3 {
-    padding: 0;
+    padding: 5px;
 }
 .btn-primary {
     color: #fff;
-    background-color: #333;
-    border-color: #333;
+    background-color: #ed97c2;
+    border-color: #b496a5;
 }
 footer {
-    padding: 100px;
     background-color: #333;
-    text-align: center;
 }
 footer .to-top {
-    font-size: 32px;
+    font-size: 28px;
     color: #fff;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
 }
 footer h5 {
     color: rgba(255,255,255,.8);
@@ -193,7 +188,8 @@ footer h5 a {
     border-bottom-color: #7f7f7f;
 }
 #socials-links {
-    position: fixed;
+    /* position: fixed; */
+    position: absolute;
     left: 0;
     top: 50%;
     z-index: 999;
@@ -212,19 +208,84 @@ footer h5 a {
     width: 30px;
     line-height: 30px;
     height: 30px;
-    background-color: #ccc;
+    background-color: #c0f3f9;
     border-radius: 100%;
     color: #fff;
-}
-#socials-links li a i:hover {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-.infos-contatos {
+.bg-metade .infos-contatos {
     list-style: none;
     padding: 0;
     margin: 15px 0;
 }
-.infos-contatos li {
+.bg-metade .infos-contatos li {
     color: #fff;
     font-size: 2vw;
+}
+.contact-section .bg-metade {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.contact-section .bg-metade img {
+    margin: auto;
+}
+.btn-default {
+    color: #fff;
+    background-color: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.3);
+}
+.btn i {
+    margin: 5px 15px;
+    float: right;
+}
+.btn {
+    border-radius: 100px;
+}
+.services-section {
+    padding: 50px 5px 5px 5px;
+}
+.top-nav-collapse .nav>li>a.btn,
+.top-nav-collapse .nav>li>a.btn:hover,
+.top-nav-collapse .nav>li>a.btn:focus,
+.top-nav-collapse .nav>li>a.btn:visited {
+    color: #fff!important;
+}
+.pre-footer {
+    background-color: #222;
+    margin: 50px -15px 0 -15px;
+    padding: 15px 0;
+}
+.pre-footer .col-lg-8,
+.pre-footer .col-lg-4 {
+    padding: 0;
+}
+footer .list-group-item {
+    background-color: transparent;
+    border-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    padding-left: 0;
+    padding-right: 0;
+}
+footer * {
+    color: #fff!important;
+}
+footer .list-group-item i {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+footer h4 {
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 30px;
+}
+footer h4:after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -15px;
+    left: 0
 }
