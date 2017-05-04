@@ -19,17 +19,17 @@ $(function() {
 });
 
 
-/*$('#carousel-header .fill, .paralax').each(function() {
+$('#carousel-header .fill, .paralax').each(function() {
     var $obj = $(this);
     $(window).scroll(function() {
-        var yPos = -($(window).scrollTop() / 15);
+        var yPos = -($(window).scrollTop() / 5);
         var bgpos = '50% ' + yPos + 'px';
         $obj.css('background-position', bgpos);
     });
-});*/
+});
 
 $('.carousel').carousel({
-    interval: false
+    interval: 6000
 });
 
 new WOW().init();
