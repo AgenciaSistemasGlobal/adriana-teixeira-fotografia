@@ -1,0 +1,1 @@
+<h3>Banner principal</h3>
