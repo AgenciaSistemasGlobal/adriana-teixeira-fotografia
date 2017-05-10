@@ -72,7 +72,7 @@
                             <a class="transition <?php echo $modulo == 'contato' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>contato">Contato</a>
                         </li>
                         <li>
-                            <a href="<?php echo URL::getBase(); ?>orcamento" class="btn btn-primary transition">Solicitar Orçamento<i class="fa fa-money" aria-hidden="true"></i></a>
+                            <a href="<?php echo URL::getBase(); ?>contato#orcamento" class="btn btn-primary transition">Solicitar Orçamento<i class="fa fa-money" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -170,7 +170,7 @@
                                 <div class="col-lg-8">
                                     <div>© 2017 Adriana Teixeira Fotografia. Todos os direitos reservados.</div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 text-right">
                                     <div>Só podia ser Sistemas Global</div>
                                 </div>
                             </div>

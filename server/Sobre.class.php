@@ -1,9 +1,6 @@
 <?php
 require_once("Conexao.class.php");
 
-/**
-* Classe responsavel por incluir novos usuarios
-*/
 class Sobre extends Conexao{
 
 	protected $pdo;

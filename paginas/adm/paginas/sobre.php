@@ -7,17 +7,18 @@
     $sobre = $Sobre->find();
 
     $retornoEditar = null;
-    if(!empty($_POST)) {
-    	
-    	$editarTitulo = $_POST['titulo'] ? $_POST['titulo'] : '';
-    	$editarImagem = $_POST['imagem'] ? $_POST['imagem'] : '';
-    	$editarTexto = $_POST['texto'] ? $_POST['texto'] : '';
+    if(isset($_POST['submit'])) {
 
-    	$Sobre->setDados($editarTitulo, $editarImagem, $editarTexto);
+    	$target = "./server/uploads/" . basename($_FILES['imagem']['name']);
+
+    	$Sobre->setDados($_POST['titulo'], $_FILES['imagem']['name'], $_POST['texto']);
     	
     	$retornoEditar = $Sobre->editar();
 
-    	$sobre = $Sobre->find();
+    	if(move_uploaded_file($_FILES['imagem']['tmp_name'], $target)) {
+
+    		$sobre = $Sobre->find();
+    	}
     }
 ?>
 <div class="row">
@@ -28,20 +29,23 @@
 				<strong>Sucesso!</strong> Os dados foram alterados.
 			</div>
 		<?php endif ?>
-		<div class="content-box-large">
-			<div class="panel-heading">
-				<div class="panel-title">Sobre</div>
-				<!-- <div class="panel-options">
-					<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-					<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-				</div> -->
+		<div class="content-box-large panel">
+			<div style="margin-top: 0" class="page-header">
+				<h1>Sobre</h1>
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal" action="" method="post">
+				<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+					
+					<div class="form-group">
+						<div class="col-md-10 col-md-offset-2">
+							<img src="<?php echo URL::getBase() . 'server/uploads/' . $sobre['imagem'] ?>" alt="<?php echo $sobre['titulo'] ?>" title="<?php echo $sobre['titulo'] ?>" class="img-responsive thumbnail">
+						</div>
+					</div>
+
 					<div class="form-group">
 						<label for="inputTitulo" class="col-sm-2 control-label">Titulo</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputTitulo" placeholder="Email" value="<?php echo $sobre['titulo'] ?>" name="titulo" required>
+							<input type="text" class="form-control" id="inputTitulo" placeholder="Titulo" value="<?php echo $sobre['titulo'] ?>" name="titulo" required>
 						</div>
 					</div>
 					<div class="form-group">
@@ -52,9 +56,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label" for="ckeditor_full">Texto</label>
+						<label class="col-sm-2 control-label" for="inputTexto">Texto</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Textarea" rows="10" name="texto" id="ckeditor_full" required>
+							<textarea class="form-control" placeholder="Texto" name="texto" id="inputTexto" required>
 								<?php echo $sobre['texto'] ?>
 							</textarea>
 						</div>
