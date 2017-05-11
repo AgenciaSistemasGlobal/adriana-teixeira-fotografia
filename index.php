@@ -1,5 +1,6 @@
 <?php
     require "server/Url.class.php";
+    require "server/Conexao.class.php";
 
     $modulo = Url::getURL(0);
     $modulo2 = Url::getURL(1);

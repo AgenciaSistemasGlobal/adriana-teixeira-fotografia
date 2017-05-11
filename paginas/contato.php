@@ -1,8 +1,12 @@
+<?php
+    $Contato = new Contato();
+    $contato = $Contato->find();
+?>
 <!-- Contact Section -->
 <section id="contact" class="contact-section">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 contato">
+            <div class="col-lg-6 col-md-6 contato">
                 <h2>Vamos Conversar</h2>
                 <form class="form-horizontal" action="" method="post">
                     <!-- Name input-->
@@ -34,7 +38,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-lg-6 bg-metade" style="background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.1)), url('<?php echo URL::getBase() ?>img/bg-contato.jpg');">
+            <div class="col-lg-6 col-md-6 bg-metade" style="background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.1)), url('<?php echo URL::getBase() . "server/uploads/" . $contato['imagem'] ?>');">
                 <img src="<?php echo URL::getBase() ?>img/global-swirl-top.png" class="img-responsive"></img>
                 <ul class="infos-contatos">
                     <li>Av. Bernardino de Campos, 98</li>

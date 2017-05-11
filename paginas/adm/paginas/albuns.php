@@ -13,7 +13,8 @@
     	$Albuns->setDados(
     		$_POST['id_servico'], 
     		$_POST['titulo'], 
-    		$_POST['descricao']
+    		$_POST['descricao'],
+    		$_POST['data']
     	);
     }
 
@@ -66,6 +67,12 @@
 					<div class="col-sm-10">
 						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
 						</textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputData" class="col-sm-2 control-label">Data da Realização</label>
+					<div class="col-sm-10">
+						<input type="date" class="form-control" id="inputData" placeholder="Data" name="data" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -130,6 +137,12 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="inputData" class="col-sm-2 control-label">Data da Realização</label>
+						<div class="col-sm-10">
+							<input type="date" class="form-control" id="inputData" placeholder="Data" name="data" value="<?php echo $album['data'] ?>" required>
+						</div>
+					</div>
+					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" class="btn btn-primary" name="editar">Editar</button>
 							<a href="?u=<?php echo $_GET['u'] ?>&del=1" class="btn btn-danger">Deletar</a>
@@ -162,10 +175,14 @@
 							<div class="col-md-4">
 								<a href="./albuns?u=<?php echo $_album['id'] ?>" title="<?php echo $_album['titulo'] ?>">
 									<div class="panel panel-default panel-card">
+										<div class="panel-image">
+											<img src="<?php echo URL::getBase() . 'server/uploads/' . (empty($_album['imagemFoto']) ? 'nophoto.svg' : $_album['imagemFoto']) ?>" class="img-responsive" title="<?php echo $_album['tituloFoto'] ?>" alt="<?php echo $_album['tituloFoto'] ?>">
+										</div>
 										<div class="panel-body">
 											<h4><?php echo $_album['titulo'] ?></h4>
 											<p><?php echo $_album['descricao'] ?></p>
-											<span class="label label-primary"><?php echo $_album['nome'] ?></span>
+											<span class="label label-primary"><?php echo $_album['nomeServico'] ?></span>
+											<span class="label label-success"><?php echo $_album['data'] ?></span>
 										</div>
 									</div>
 								</a>

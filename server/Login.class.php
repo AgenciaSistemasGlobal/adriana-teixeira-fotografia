@@ -1,9 +1,4 @@
 <?php
-require_once("Conexao.class.php");
-
-/**
-* Classe responsavel pelo Login
-*/
 class Login extends Conexao{
 
 	private $login;

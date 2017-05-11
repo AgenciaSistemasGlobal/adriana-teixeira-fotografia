@@ -1,3 +1,13 @@
+<?php
+    require "/server/Banner.class.php";
+    require "/server/Sobre.class.php";
+    require "/server/Citacoes.class.php";
+    require "/server/Servicos.class.php";
+    require "/server/Contato.class.php";
+    require "/server/Albuns.class.php";
+
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -6,7 +16,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="author" content="Agência Digital Sistemas Global">
 
         <title>Adriana Teixeira Fotografia</title>
 
@@ -28,18 +38,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
-
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="<?php echo $modulo != 'home' ? 'internas' : '' ?>">
         
-        <!-- <div id="fb-root"></div>
+        <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
           js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9&appId=1364340600304232";
           fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script> -->
+        }(document, 'script', 'facebook-jssdk'));</script>
 
         <!-- Navigation -->
         <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">
@@ -72,8 +80,16 @@
                             <a class="transition <?php echo $modulo == 'contato' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>contato">Contato</a>
                         </li>
                         <li>
-                            <a href="<?php echo URL::getBase(); ?>contato#orcamento" class="btn btn-primary transition">Solicitar Orçamento<i class="fa fa-money" aria-hidden="true"></i></a>
+                            <a class="transition <?php echo $modulo == 'servicos' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>servicos">Serviços</a>
                         </li>
+                        <li>
+                            <a href="<?php echo URL::getBase(); ?>contato#orcamento" class="btn btn-primary transition">Solicitar Orçamento</a>
+                        </li>
+                        <?php if(!empty($_SESSION['sudo_logado'])): ?>
+                            <li>
+                                <a href="./adm" class="btn btn-default transition">Entrar como <?php echo explode(" ",$_SESSION['sudo_nome'])[0] ?></a>
+                            </li>
+                        <?php endif ?>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -116,12 +132,8 @@
 
         <footer>
             <div class="container">
-                <a class="page-scroll to-top" href="#page-top">
-                    <span class="glyphicon glyphicon-chevron-up"></span>
-                    <p>Ir para o Topo</p>
-                </a>
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-md-3 col-lg-3">
                         <h4>Navegue pelo site</h4>
                         <ul class="list-group">
                             <li class="list-group-item">
@@ -140,7 +152,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-md-3 col-lg-3">
                         <h4>Vamos conversar?</h4>
                         <ul class="list-group infos-contatos">
                             <li class="list-group-item">Av. Bernardino de Campos, 98</li>
@@ -149,7 +161,7 @@
                             <li class="list-group-item">Tel: (11) 3456-7890</li>
                         </ul>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-md-2 col-lg-2">
                         <h4>Conecte-se a nós</h4>
                         <div class="list-group">
                             <a href="#" class="list-group-item"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
@@ -157,8 +169,8 @@
                             <a href="#" class="list-group-item"><i class="fa fa-pinterest-p" aria-hidden="true"></i>Pinterest</a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <!-- <div class="fb-page" data-href="https://www.facebook.com/FacebookBrasil/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/FacebookBrasil/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FacebookBrasil/">Facebook</a></blockquote></div> -->
+                    <div class="col-md-4 col-lg-4">
+                        <div class="fb-page" data-href="https://www.facebook.com/FacebookBrasil/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/FacebookBrasil/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FacebookBrasil/">Facebook</a></blockquote></div>
                     </div>
                 </div>
             </div>
@@ -167,11 +179,15 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="col-lg-8">
+                                <div class="col-md-8 col-lg-8">
                                     <div>© 2017 Adriana Teixeira Fotografia. Todos os direitos reservados.</div>
                                 </div>
-                                <div class="col-lg-4 text-right">
-                                    <div>Só podia ser Sistemas Global</div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div>
+                                        <a href="https://sistemasglobal.com.br">
+                                            <img src="https://sistemasglobal.com.br/img/logotipo-criacao-de-sites.jpg" alt="Agência Digital Sistemas Global" title="Agência Digital Sistemas Global" class="img-responsive pull-right logo-footer grayscale">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -179,6 +195,10 @@
                 </div>
             </div>
         </footer>
+
+        <a class="page-scroll to-top" href="#page-top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
 
         <!-- jQuery -->
         <script src="<?php echo URL::getBase() ?>js/jquery.js"></script>

@@ -1,2 +1,2 @@
 # Adriana Teixeira Fotografia
-![Adriana Teixeira Fotografia](https://github.com/AgenciaSistemasGlobal/adriana-teixeira-fotografia/blob/master/img/screencapture-adriana-teixeira-fotografia.png "Adriana Teixeira Fotografia")
+Projeto de criação / desenvolvimento do site e gerenciador de conteúdo do mesmo, para a cliente: Adriana Teixeira Fotografia Veja nosso portfolio no site [https://sistemasglobal.com.br](https://sistemasglobal.com.br)

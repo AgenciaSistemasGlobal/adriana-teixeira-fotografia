@@ -88,7 +88,7 @@
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<button type="submit" class="btn btn-primary" name="cadastrar">Salvar</button>
-						<a href="<?php echo URL::getBase() ?>adm/albuns" class="btn btn-default">Cancelar</a>
+						<a href="<?php echo URL::getBase() ?>adm/fotos" class="btn btn-default">Cancelar</a>
 					</div>
 				</div>
 			</form>

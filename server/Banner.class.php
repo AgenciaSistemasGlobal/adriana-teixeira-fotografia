@@ -1,6 +1,4 @@
 <?php
-require_once("Conexao.class.php");
-
 class Banner extends Conexao{
 
 	protected $pdo;

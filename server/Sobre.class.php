@@ -1,6 +1,4 @@
 <?php
-require_once("Conexao.class.php");
-
 class Sobre extends Conexao{
 
 	protected $pdo;
@@ -30,13 +28,21 @@ class Sobre extends Conexao{
 	}
 
 	public function editar($_id=1){
+
+		$imagemManipulada = "";
+		if(!empty($this->imagem))
+			$imagemManipulada = ", imagem = ?";
 		
-		$editar = $this->pdo->prepare("UPDATE sobre SET titulo = ?, imagem = ?, texto = ? WHERE id = ?");
+		$editar = $this->pdo->prepare("UPDATE sobre SET titulo = ?" . $imagemManipulada . ", texto = ? WHERE id = ?");
 
 		$editar->bindValue(1, $this->titulo);
-		$editar->bindValue(2, $this->imagem);
-		$editar->bindValue(3, $this->texto);
-		$editar->bindValue(4, $_id);
+
+		if(!empty($this->imagem)) {
+			$editar->bindValue(2, $this->imagem);
+		}
+
+		$editar->bindValue(!empty($this->imagem) ? 3 : 2, $this->texto);
+		$editar->bindValue(!empty($this->imagem) ? 4 : 3, $_id);
 		$editar->execute();
 
 		return $editar->rowCount();

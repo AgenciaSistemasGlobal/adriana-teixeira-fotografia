@@ -1,6 +1,4 @@
 <?php
-require_once("Conexao.class.php");
-
 class Fotos extends Conexao{
 
 	protected $pdo;
@@ -24,11 +22,45 @@ class Fotos extends Conexao{
 
 	public function find($_id){
 
-		$find = $this->pdo->prepare("SELECT * FROM fotos WHERE id = ?");
+		$find = $this->pdo->prepare("
+			SELECT fts.id,
+				fts.id_album,
+				fts.titulo,
+				fts.descricao,
+				fts.imagem,
+				albs.titulo as nomeAlbum,
+				albs.id as idAlbum
+			FROM fotos fts
+			LEFT JOIN albuns albs
+			ON fts.id_album = albs.id
+			WHERE fts.id = ?
+		");
 		$find->bindValue(1, $_id);
 		$find->execute();
 
 		return parent::utf8ize($find->fetch());
+	}
+
+	public function findByAlbum($_id){
+
+		$findAll = $this->pdo->prepare("
+			SELECT fts.id,
+				fts.id_album,
+				fts.titulo,
+				fts.descricao,
+				fts.imagem,
+				albs.titulo as nomeAlbum,
+				albs.id as idAlbum
+			FROM fotos fts
+			LEFT JOIN albuns albs
+			ON fts.id_album = albs.id
+			WHERE fts.id_album = ?
+		");
+
+		$findAll->bindValue(1, $_id);
+		$findAll->execute();
+
+		return parent::utf8ize($findAll->fetchAll());
 	}
 
 	public function findAll(){
@@ -39,10 +71,12 @@ class Fotos extends Conexao{
 				fts.titulo,
 				fts.descricao,
 				fts.imagem,
-				albs.titulo as nomeAlbum
+				albs.titulo as nomeAlbum,
+				albs.id as idAlbum
 			FROM fotos fts
-			INNER JOIN albuns albs
-			ON fts.id_album = albs.id");
+			LEFT JOIN albuns albs
+			ON fts.id_album = albs.id
+		");
 
 		$findAll->execute();
 

@@ -38,7 +38,7 @@
 					
 					<div class="form-group">
 						<div class="col-md-10 col-md-offset-2">
-							<img src="<?php echo URL::getBase() . 'server/uploads/' . $sobre['imagem'] ?>" alt="<?php echo $sobre['titulo'] ?>" title="<?php echo $sobre['titulo'] ?>" class="img-responsive thumbnail">
+							<img src="<?php echo URL::getBase() . 'server/uploads/' . $sobre['imagem'] ?>" alt="<?php echo $sobre['titulo'] ?>" title="<?php echo $sobre['titulo'] ?>" class="img-responsive thumbnail" id="imgPreviewSobre">
 						</div>
 					</div>
 
@@ -51,14 +51,14 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label" for="inputImagem">Imagem</label>
 						<div class="col-md-10">
-							<input type="file" class="btn btn-default" id="inputImagem" name="imagem">
+							<input type="file" class="btn btn-default uploadPreview" id="inputImagem" name="imagem" data-imgpreview="imgPreviewSobre">
 							<p class="help-block">A imagem se ajustará automaticamente</p>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label" for="inputTexto">Texto</label>
+						<label class="col-sm-2 control-label" for="ckeditor_full">Texto</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Texto" name="texto" id="inputTexto" required>
+							<textarea class="form-control" placeholder="Texto" name="texto" id="ckeditor_full" required>
 								<?php echo $sobre['texto'] ?>
 							</textarea>
 						</div>
