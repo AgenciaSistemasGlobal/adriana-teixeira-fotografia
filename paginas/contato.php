@@ -22,7 +22,7 @@
                         $mail->setFrom($_POST['email'], $_POST['name']);
                         $mail->addReplyTo($_POST['email'], $_POST['name']);
 
-                        $mail->addAddress('adriana_teix@hotmail.com', 'Adriana Teixeira')
+                        $mail->addAddress('adriana_teix@hotmail.com', 'Adriana Teixeira');
                         $mail->addAddress('falecom@sistemasglobal.com.br', 'Murilo Eduardo dos Santos');
                         $mail->addAddress('contato@adrianateixeirafotografia.com.br', 'Adriana Teixeira');
                         
