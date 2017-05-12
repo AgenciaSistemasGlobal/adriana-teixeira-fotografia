@@ -4,24 +4,15 @@
 */
 abstract class Conexao{
 
-	const HOST = "localhost";
+	/*const HOST = "localhost";
 	const USER = "root";
 	const PASS = "";
-	const DB = "adriana-teixeira-fotografia";
+	const DB = "adriana-teixeira-fotografia";*/
 
-	private $whitelist = array(
-	    '127.0.0.1',
-	    '::1'
-	);
-
-	if(!in_array($_SERVER['REMOTE_ADDR'], $this->whitelist)){
-
-		// Em Produção
-		const HOST = "mysql796.umbler.com";
-		const USER = "desenvolvedores";
-		const PASS = "O2wLm4}]fd";
-		const DB = "adriana-teixeira";
-	}
+	const HOST = "mysql796.umbler.com";
+    const USER = "desenvolvedores";
+	const PASS = "O2wLm4}]fd";
+	const DB = "adriana-teixeira";
 
 	private static $instance = null;
 
