@@ -12,7 +12,7 @@
                     //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
                     $mail->isSMTP();                                      // Set mailer to use SMTP
-                    $mail->Host = 'smtp.adrianateixeirafotografia.com.br';  // Specify main and backup SMTP servers
+                    $mail->Host = 'smtp.umbler.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
                     $mail->Username = 'contato@adrianateixeirafotografia.com.br';                 // SMTP username
                     $mail->Password = 'adrianateix';                           // SMTP password
