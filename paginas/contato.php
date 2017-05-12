@@ -65,6 +65,7 @@
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                     <strong>Ó não!</strong> Mensagem não foi enviada.
                                 </div>';
+                            echo "Motivo do erro: " . $mail->ErrorInfo;
                         } else {
                             echo '<div class="alert alert-success">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
