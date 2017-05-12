@@ -273,7 +273,5 @@
         <!-- Scrolling Nav JavaScript -->
         <script src="<?php echo URL::getBase() ?>js/jquery.easing.min.js"></script>
         <script src="<?php echo URL::getBase() ?>js/scrolling-nav.js"></script>
-
-        <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-WT2QWFJ"></script>
     </body>
 </html>
