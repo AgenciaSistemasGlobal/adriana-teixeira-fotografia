@@ -1059,6 +1059,17 @@ footer a:hover {
     font-size: 18px;
   }
   .list-group-item { word-wrap: break-word; }
+  
+  .fill,
+  #album-uniq header, 
+  #servico-uniq header {
+    background-attachment: initial;
+    background-position: center!important;
+  }
+  #album-uniq header, 
+  #servico-uniq header {
+    padding-top: 0;
+  }
 }
 /*TABLET*/
 @media (min-width: 768px) and (max-width: 991px) {

@@ -201,7 +201,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                        <div class="fb-page" data-href="https://www.facebook.com/FacebookBrasil/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/FacebookBrasil/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FacebookBrasil/">Facebook</a></blockquote></div>
+                        <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100016858890144" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
                     </div>
                 </div>
             </div>
