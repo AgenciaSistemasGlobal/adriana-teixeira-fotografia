@@ -68,13 +68,13 @@
 				<div class="form-group">
 					<label for="inputTitulo" class="col-sm-2 control-label">Titulo</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputTitulo" placeholder="Titulo" name="titulo" required>
+						<input type="text" class="form-control" id="inputTitulo" placeholder="Titulo" name="titulo">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
+						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao">
 						</textarea>
 					</div>
 				</div>
@@ -140,14 +140,14 @@
 					<div class="form-group">
 						<label for="inputTitulo" class="col-sm-2 control-label">Titulo</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputTitulo" placeholder="Titulo" name="titulo" value="<?php echo $foto['titulo'] ?>" required>
+							<input type="text" class="form-control" id="inputTitulo" placeholder="Titulo" name="titulo" value="<?php echo $foto['titulo'] ?>">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
+							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao">
 								<?php echo $foto['descricao'] ?>
 							</textarea>
 						</div>

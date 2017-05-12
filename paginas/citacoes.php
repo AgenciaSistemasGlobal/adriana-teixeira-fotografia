@@ -11,8 +11,8 @@
                 <?php foreach ($citacoes as $key => $citacao): ?>
                     <div class="item <?php if(!$key) echo 'active' ?>">
                         <div class="col-lg-6 col-lg-offset-3">
-                            <h2><?php echo $citacao['titulo'] ?></h2>
-                            <h4><?php echo $citacao['descricao'] ?></h4>
+                            <h2 class="animated fadeInDown"><?php echo $citacao['titulo'] ?></h2>
+                            <h4 class="animated fadeInUp"><?php echo $citacao['descricao'] ?></h4>
                         </div>
                     </div>
                 <?php endforeach ?>
@@ -39,7 +39,7 @@
         </div>
         
         <div class="action-bottom text-center">
-            <a href="<?php echo URL::getBase() ?>contato" class="btn btn-default btn-lg">Faça um Contato Conosco<i class="fa fa-phone" aria-hidden="true"></i></a>
+            <a href="<?php echo URL::getBase() ?>contato" class="btn btn-default btn-lg transition">Faça um Contato Conosco<i class="fa fa-phone" aria-hidden="true"></i></a>
         </div>
     </div>
 </section>s

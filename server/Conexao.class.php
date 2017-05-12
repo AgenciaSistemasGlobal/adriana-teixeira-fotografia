@@ -4,15 +4,15 @@
 */
 abstract class Conexao{
 
-	const HOST = "localhost";
+	/*const HOST = "localhost";
 	const USER = "root";
 	const PASS = "";
-	const DB = "adriana-teixeira-fotografia";
+	const DB = "adriana-teixeira-fotografia";*/
 
-	/*const HOST = "mysql.hostinger.com.br";
-    const USER = "u133061497_muril";
-	const PASS = "lilo0202";
-	const DB = "u133061497_extin";*/
+	const HOST = "mysql.hostinger.com.br";
+    const USER = "u133061497_muri";
+	const PASS = "liloeduardo0202";
+	const DB = "u133061497_adria";
 
 	private static $instance = null;
 

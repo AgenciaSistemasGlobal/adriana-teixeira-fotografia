@@ -15,9 +15,7 @@
     		$_POST['endereco'], 
     		$_POST['telefone'], 
     		$_POST['celular'], 
-    		$_POST['estado'], 
     		$_POST['cidade'], 
-    		$_POST['cep'], 
     		$_POST['email'], 
     		$_POST['facebook'], 
     		$_POST['instagram'], 
@@ -72,16 +70,6 @@
 							<input type="text" class="form-control" id="inputCelular" placeholder="Celular" value="<?php echo $contato['celular'] ?>" name="celular" required>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="inputEstado" class="col-sm-2 control-label">Estado</label>
-						<div class="col-sm-10">
-							<select name="estado" id="inputEstado" class="form-control" required value="<?php echo $contato['estado'] ?>">
-								<option value="RS">RS</option>
-								<option value="RJ">RJ</option>
-								<option value="SP">SP</option>
-							</select>
-						</div>
-					</div>
 
 					<div class="form-group">
 						<label for="inputCidade" class="col-sm-2 control-label">Cidade</label>
@@ -89,14 +77,6 @@
 							<input type="text" class="form-control" id="inputCidade" placeholder="Cidade" value="<?php echo $contato['cidade'] ?>" name="cidade" required>
 						</div>
 					</div>
-
-					<div class="form-group">
-						<label for="inputCep" class="col-sm-2 control-label">Cep</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputCep" placeholder="Cep" value="<?php echo $contato['cep'] ?>" name="cep" required>
-						</div>
-					</div>
-
 					<div class="form-group">
 						<label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
 						<div class="col-sm-10">
@@ -128,7 +108,7 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label" for="inputImagem">Imagem</label>
 						<div class="col-md-10">
-							<input type="file" class="btn btn-default uploadPreview" id="inputImagem" name="imagem" data-imgpreview="imgPreviewContato" required>
+							<input type="file" class="btn btn-default uploadPreview" id="inputImagem" name="imagem" data-imgpreview="imgPreviewContato">
 							<p class="help-block">A imagem se ajustará automaticamente</p>
 						</div>
 					</div>

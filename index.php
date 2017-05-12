@@ -2,6 +2,8 @@
     require "server/Url.class.php";
     require "server/Conexao.class.php";
 
+    session_start();
+
     $modulo = Url::getURL(0);
     $modulo2 = Url::getURL(1);
     $modulo3 = Url::getURL(2);

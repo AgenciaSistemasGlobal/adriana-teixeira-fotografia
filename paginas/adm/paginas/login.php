@@ -53,6 +53,8 @@
 		                </form>      
 		            </div>
 		        </div>
+		        <br>
+		        <a href="<?php echo URL::getBase() ?>" class="">Ir Para o Site</a>
 		    </div>
 		</div>
 	</div>

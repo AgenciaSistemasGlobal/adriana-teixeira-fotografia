@@ -5,8 +5,10 @@
     require "/server/Servicos.class.php";
     require "/server/Contato.class.php";
     require "/server/Albuns.class.php";
+    require "/server/Fotos.class.php";
 
-    session_start();
+    $Contato = new Contato();
+    $contato = $Contato->find();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -50,7 +52,7 @@
         }(document, 'script', 'facebook-jssdk'));</script>
 
         <!-- Navigation -->
-        <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-transparent navbar-fixed-top stroke" role="navigation">
             <div class="container">
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -77,17 +79,20 @@
                             <a class="transition <?php echo $modulo == 'trabalhos-realizados' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>trabalhos-realizados">Trabalhos Realizados</a>
                         </li>
                         <li>
-                            <a class="transition <?php echo $modulo == 'contato' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>contato">Contato</a>
-                        </li>
-                        <li>
                             <a class="transition <?php echo $modulo == 'servicos' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>servicos">Serviços</a>
                         </li>
                         <li>
-                            <a href="<?php echo URL::getBase(); ?>contato#orcamento" class="btn btn-primary transition">Solicitar Orçamento</a>
+                            <a class="transition <?php echo $modulo == 'citacoes' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>citacoes">Citações</a>
+                        </li>
+                        <li>
+                            <a class="transition <?php echo $modulo == 'contato' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>contato">Contato</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo URL::getBase(); ?>contato/orcamento" class="btn btn-primary transition">Solicitar Orçamento</a>
                         </li>
                         <?php if(!empty($_SESSION['sudo_logado'])): ?>
                             <li>
-                                <a href="./adm" class="btn btn-default transition">Entrar como <?php echo explode(" ",$_SESSION['sudo_nome'])[0] ?></a>
+                                <a href="<?php echo URL::getBase(); ?>adm" class="btn btn-default transition">Gerenciador</a>
                             </li>
                         <?php endif ?>
                     </ul>
@@ -99,26 +104,27 @@
 
         <nav id="socials-links">
             <ul>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-instagram transition" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-facebook transition" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-twitter transition" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                    </a>
-                </li>
+                <?php if($contato['facebook']): ?>
+                    <li>
+                        <a href="<?php echo $contato['facebook'] ?>">
+                            <i class="fa fa-facebook transition" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                <?php endif ?>
+                <?php if($contato['instagram']): ?>
+                    <li>
+                        <a href="<?php echo $contato['instagram'] ?>">
+                            <i class="fa fa-instagram transition" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                <?php endif ?>
+                <?php if($contato['pinterest']): ?>
+                    <li>
+                        <a href="<?php echo $contato['pinterest'] ?>">
+                            <i class="fa fa-pinterest-p transition" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                <?php endif ?>
             </ul>
         </nav>
 
@@ -135,39 +141,77 @@
                 <div class="row">
                     <div class="col-md-3 col-lg-3">
                         <h4>Navegue pelo site</h4>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <a class="page-scroll transition" href="#page-top">
-                                    Home
-                                </a>
-                            </li>
-                            <li class="list-group-item">
-                                <a class="page-scroll transition" href="#about">Sobre</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a class="page-scroll transition" href="#services">Trabalho Realizados</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a class="page-scroll transition" href="#contact">Contato</a>
-                            </li>
-                        </ul>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <a class="transition <?php echo $modulo == 'home' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>">Home</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="transition <?php echo $modulo == 'sobre' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>sobre">Sobre</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="transition <?php echo $modulo == 'trabalhos-realizados' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>trabalhos-realizados">Trabalhos Realizados</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <a class="transition <?php echo $modulo == 'servicos' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>servicos">Serviços</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="transition <?php echo $modulo == 'citacoes' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>citacoes">Citações</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="transition <?php echo $modulo == 'contato' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>contato">Contato</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-3 col-lg-3">
                         <h4>Vamos conversar?</h4>
                         <ul class="list-group infos-contatos">
-                            <li class="list-group-item">Av. Bernardino de Campos, 98</li>
-                            <li class="list-group-item">info@meusite.com</li>
-                            <li class="list-group-item">São Paulo, SP 12345-678</li>
-                            <li class="list-group-item">Tel: (11) 3456-7890</li>
+                            <?php if($contato['telefone']): ?>
+                                <li class="list-group-item"><?php echo $contato['telefone'] ?></li>
+                            <?php endif ?>
+                            <?php if($contato['celular']): ?>
+                                <li class="list-group-item"><?php echo $contato['celular'] ?></li>
+                            <?php endif ?>
+                            <?php if($contato['email']): ?>
+                                <li class="list-group-item"><?php echo $contato['email'] ?></li>
+                            <?php endif ?>
+                            <?php if($contato['endereco']): ?>
+                                <li class="list-group-item"><?php echo $contato['endereco'] . " - " . $contato['cidade'] ?></li>
+                            <?php endif ?>
                         </ul>
                     </div>
                     <div class="col-md-2 col-lg-2">
                         <h4>Conecte-se a nós</h4>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
-                            <a href="#" class="list-group-item"><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a>
-                            <a href="#" class="list-group-item"><i class="fa fa-pinterest-p" aria-hidden="true"></i>Pinterest</a>
-                        </div>
+                        <ul class="list-group">
+                            <?php if($contato['facebook']): ?>
+                                <li class="list-group-item">
+                                    <a href="<?php echo $contato['facebook'] ?>">
+                                        <i class="fa fa-facebook transition" aria-hidden="true"></i>Facebook
+                                    </a>
+                                </li>
+                            <?php endif ?>
+                            <?php if($contato['instagram']): ?>
+                                <li class="list-group-item">
+                                    <a href="<?php echo $contato['instagram'] ?>">
+                                        <i class="fa fa-instagram transition" aria-hidden="true"></i>Instagram
+                                    </a>
+                                </li>
+                            <?php endif ?>
+                            <?php if($contato['pinterest']): ?>
+                                <li class="list-group-item">
+                                    <a href="<?php echo $contato['pinterest'] ?>">
+                                        <i class="fa fa-pinterest-p transition" aria-hidden="true"></i>Pinterest
+                                    </a>
+                                </li>
+                            <?php endif ?>
+                        </ul>
                     </div>
                     <div class="col-md-4 col-lg-4">
                         <div class="fb-page" data-href="https://www.facebook.com/FacebookBrasil/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/FacebookBrasil/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FacebookBrasil/">Facebook</a></blockquote></div>
@@ -196,7 +240,7 @@
             </div>
         </footer>
 
-        <a class="page-scroll to-top" href="#page-top">
+        <a class="page-scroll to-top transition" href="#page-top">
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>
 

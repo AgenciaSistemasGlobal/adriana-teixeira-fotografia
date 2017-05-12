@@ -1,9 +1,11 @@
 <?php
   require "/server/Login.class.php";
 
-  if(isset($_GET['logout']) && $_GET['logout']) Login::logout(URL::getBase());
+  if(isset($_GET['logout']) && $_GET['logout']) {
+    Login::logout(URL::getBase());
 
-  session_start();
+    var_dump('if');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

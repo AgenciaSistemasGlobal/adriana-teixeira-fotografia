@@ -58,11 +58,11 @@ class Login extends Conexao{
 
 	public static function logout($_baseurl=""){
 
-		if (isset($_SESSION['sudo_logado'])) {
-			unset($_SESSION['sudo_logado']);
-			session_destroy();
-			header("Location: " . $_baseurl . "adm/login");
-		}
+		$_SESSION['sudo_logado'] = false;
+
+		unset($_SESSION['sudo_logado']);
+		session_destroy();
+		header("Location: " . $_baseurl . "adm/login");
 	}
 }
 ?>

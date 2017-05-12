@@ -65,8 +65,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
-						</textarea>
+						<input type="text" class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -133,9 +132,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
-								<?php echo $slide['descricao'] ?>
-							</textarea>
+							<input type="text" value="<?php echo $slide['descricao'] ?>" class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
 						</div>
 					</div>
 					<div class="form-group">
