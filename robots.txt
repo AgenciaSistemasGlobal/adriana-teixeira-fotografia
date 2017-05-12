@@ -4,6 +4,7 @@ User-agent: *
 Disallow: /paginas
 Disallow: /server
 Disallow: /fonts
+Disallow: /admin
 Disallow: /css
 Disallow: /js
 
