@@ -28,12 +28,7 @@
 ?>
 
 <?php if($modulo3 == "novo"): ?>
-	<?php if($retornoCadastrar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram cadastrados.
-		</div>
-	<?php endif ?>
+	
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Novo Cliente</h2>
@@ -41,6 +36,13 @@
 		<div class="panel-body">
 			<!-- Content -->
 			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+				<?php if($retornoCadastrar): ?>
+					<div class="alert alert-success">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Sucesso!</strong> Os dados foram cadastrados.
+					</div>
+				<?php endif ?>
 
 				<div class="form-group">
 					<label for="inputNome" class="col-sm-2 control-label">Nome</label>
@@ -95,12 +97,6 @@
 			die('<script type="text/javascript">window.location.href="clientes";</script>');
 		}
 ?>
-	<?php if($retornoEditar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram alterados.
-		</div>
-	<?php endif ?>
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Detalhes do Cliente</h2>
@@ -110,38 +106,45 @@
 			<?php if($cliente): ?>
 				<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
 
+					<?php if($retornoEditar): ?>
+						<div class="alert alert-success">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong>Sucesso!</strong> Os dados foram alterados.
+						</div>
+					<?php endif ?>
+
 					<div class="form-group">
 						<label for="inputNome" class="col-sm-2 control-label">Nome</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome" value="<?php echo $servico['nome'] ?>" required>
+							<input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome" value="<?php echo $cliente['nome'] ?>" required>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
 						<div class="col-sm-10">
-							<input type="email" class="form-control" id="inputEmail" placeholder="E-mail" name="email" value="<?php echo $servico['email'] ?>" required>
+							<input type="email" class="form-control" id="inputEmail" placeholder="E-mail" name="email" value="<?php echo $cliente['email'] ?>" required>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="inputEndereco" class="col-sm-2 control-label">Endereço Completo</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputEndereco" placeholder="Endereço Completo" name="endereco" value="<?php echo $servico['endereco'] ?>" required>
+							<input type="text" class="form-control" id="inputEndereco" placeholder="Endereço Completo" name="endereco" value="<?php echo $cliente['endereco'] ?>" required>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="inputTelefone" class="col-sm-2 control-label">Telefone</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputTelefone" placeholder="Telefone" name="telefone" value="<?php echo $servico['telefone'] ?>" required>
+							<input type="text" class="form-control" id="inputTelefone" placeholder="Telefone" name="telefone" value="<?php echo $cliente['telefone'] ?>" required>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="inputDataNascimento" class="col-sm-2 control-label">Data de Nascimento</label>
 						<div class="col-sm-10">
-							<input type="date" class="form-control" id="inputDataNascimento" placeholder="Data de Nascimento" name="data_nascimento" value="<?php echo $servico['data_nascimento'] ?>" required>
+							<input type="date" class="form-control" id="inputDataNascimento" placeholder="Data de Nascimento" name="data_nascimento" value="<?php echo $cliente['data_nascimento'] ?>" required>
 						</div>
 					</div>
 					<div class="form-group">

@@ -24,12 +24,7 @@
 ?>
 
 <?php if($modulo3 == "novo"): ?>
-	<?php if($retornoCadastrar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram cadastrados.
-		</div>
-	<?php endif ?>
+	
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Nova Citação</h2>
@@ -37,6 +32,13 @@
 		<div class="panel-body">
 			<!-- Content -->
 			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+				<?php if($retornoCadastrar): ?>
+					<div class="alert alert-success">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Sucesso!</strong> Os dados foram cadastrados.
+					</div>
+				<?php endif ?>
 
 				<div class="form-group">
 					<label for="inputTitulo" class="col-sm-2 control-label">Titulo</label>
@@ -69,12 +71,6 @@
 			die('<script type="text/javascript">window.location.href="citacoes";</script>');
 		}
 ?>
-	<?php if($retornoEditar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram alterados.
-		</div>
-	<?php endif ?>
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Detalhes da Citação</h2>
@@ -83,6 +79,13 @@
 			<!-- Content -->
 			<?php if($citacao): ?>
 				<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+					<?php if($retornoEditar): ?>
+						<div class="alert alert-success">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong>Sucesso!</strong> Os dados foram alterados.
+						</div>
+					<?php endif ?>
 
 					<div class="form-group">
 						<label for="inputTitulo" class="col-sm-2 control-label">Titulo</label>

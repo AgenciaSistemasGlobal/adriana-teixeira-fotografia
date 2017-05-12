@@ -50,12 +50,7 @@
 ?>
 
 <?php if($modulo3 == "novo"): ?>
-	<?php if($retornoCadastrar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram cadastrados.
-		</div>
-	<?php endif ?>
+	
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Nova Foto</h2>
@@ -63,6 +58,20 @@
 		<div class="panel-body">
 			<!-- Content -->
 			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+				<?php if($retornoCadastrar): ?>
+					<div class="alert alert-success">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Sucesso!</strong> Os dados foram cadastrados.
+					</div>
+				<?php endif ?>
+
+				<?php if(!count($albuns)): ?>
+					<div class="alert alert-warning">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Sem albuns cadastrados!</strong> Toda precisa necessariamente pertencer a um album. <a href="<?php echo URL::getBase() ?>adm/albuns/novo">Clique aqui</a> para adicionar.
+					</div>
+				<?php endif ?>
 
 				<div class="form-group">
 					<div class="col-md-10 col-md-offset-2">
@@ -120,12 +129,6 @@
 			die('<script type="text/javascript">window.location.href="fotos";</script>');
 		}
 ?>
-	<?php if($retornoEditar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram alterados.
-		</div>
-	<?php endif ?>
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Detalhes da Foto</h2>
@@ -134,6 +137,13 @@
 			<!-- Content -->
 			<?php if($foto): ?>
 				<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+					<?php if($retornoEditar): ?>
+						<div class="alert alert-success">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong>Sucesso!</strong> Os dados foram alterados.
+						</div>
+					<?php endif ?>
 
 					<div class="form-group">
 						<div class="col-md-10 col-md-offset-2">

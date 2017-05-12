@@ -28,7 +28,7 @@ class Clientes extends Conexao{
 		$find->bindValue(1, $_id);
 		$find->execute();
 
-		return parent::utf8ize($find->fetch());
+		return $find->fetch();
 	}
 
 	public function findAll(){
@@ -36,7 +36,7 @@ class Clientes extends Conexao{
 		$findAll = $this->pdo->prepare("SELECT * FROM clientes");
 		$findAll->execute();
 
-		return parent::utf8ize($findAll->fetchAll());
+		return $findAll->fetchAll();
 	}
 
 	public function editar($_id){

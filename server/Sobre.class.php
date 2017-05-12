@@ -24,7 +24,7 @@ class Sobre extends Conexao{
 		$find->bindValue(1, $_id);
 		$find->execute();
 
-		return parent::utf8ize($find->fetch());
+		return $find->fetch();
 	}
 
 	public function editar($_id=1){

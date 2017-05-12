@@ -1,6 +1,8 @@
 <?php
     $Albuns = new Albuns();
     $Fotos = new Fotos();
+    $Servicos = new Servicos();
+
     $albuns = $Albuns->findAll();
 
     $albumUniq=false;
@@ -33,6 +35,7 @@
             </div>
             <div class="row">
                 <?php foreach ($albuns as $album): ?>
+                    <?php $fotoByAlbum = $Fotos->findByAlbum($album['id'])[0] ?>
                     <div class="col-md-4">
                         <div class="column"> 
                             <!-- Post-->
@@ -46,11 +49,11 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <img src="<?php echo URL::getBase() . 'server/uploads/' . $album['imagemFoto'] ?>" class="img-responsive" title="<?php echo $album['tituloFoto'] ?>" alt="<?php echo $album['tituloFoto'] ?>">
+                                    <img src="<?php echo URL::getBase() . 'server/uploads/' . $fotoByAlbum['imagem'] ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
                                 </div>
                                 <!-- Post Content-->
                                 <div class="post-content">
-                                    <div class="category"><?php echo $album['nomeServico'] ?></div>
+                                    <div class="category"><?php echo $Servicos->find($album['id_servico'])['nome'] ?></div>
                                     <h1 class="title"><?php echo $album['titulo'] ?></h1>
                                     <p class="description"><?php echo $album['descricao'] ?></p>
                                     <div class="post-meta">
@@ -61,13 +64,6 @@
                         </div>
                     </div>
                 <?php endforeach ?>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="action-bottom">
-                        <a href="./trabalhos-realizados" class="btn text-black" style="font-size: 16px!important">Veja Todos Nossos Trabalhos Realizados</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

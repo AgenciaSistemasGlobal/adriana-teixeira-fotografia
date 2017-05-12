@@ -30,6 +30,7 @@ class Albuns extends Conexao{
 				albs.titulo,
 				albs.descricao,
 				albs.data,
+				albs.id_servico,
 				albs.id
 			FROM albuns albs
 			LEFT JOIN fotos fts
@@ -39,7 +40,7 @@ class Albuns extends Conexao{
 		$find->bindValue(1, $_id);
 		$find->execute();
 
-		return parent::utf8ize($find->fetch());
+		return $find->fetch();
 	}
 
 	public function findByServicos($_id){
@@ -55,6 +56,7 @@ class Albuns extends Conexao{
 				fts.descricao as imagemDescricao,
 				albs.titulo,
 				albs.descricao,
+				albs.id_servico,
 				albs.data,
 				albs.id
 			FROM albuns albs
@@ -67,30 +69,16 @@ class Albuns extends Conexao{
 		$find->bindValue(1, $_id);
 		$find->execute();
 
-		return parent::utf8ize($find->fetchAll());
+		return $find->fetchAll();
 	}
 
 	public function findAll(){
 
-		$findAll = $this->pdo->prepare("
-			SELECT albs.id,
-				albs.titulo,
-				albs.descricao,
-				albs.data,
-				fts.id as idFoto,
-				fts.titulo as tituloFoto,
-				fts.imagem as imagemFoto,
-				srvcs.nome as nomeServico
-			FROM albuns albs
-			INNER JOIN servicos srvcs
-			ON albs.id_servico = srvcs.id
-			LEFT JOIN fotos fts
-			ON albs.id = fts.id_album
-		");
+		$findAll = $this->pdo->prepare("SELECT * FROM albuns");
 
 		$findAll->execute();
 
-		return parent::utf8ize($findAll->fetchAll());
+		return $findAll->fetchAll();
 	}
 
 	public function editar($_id){

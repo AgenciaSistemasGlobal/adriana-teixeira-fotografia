@@ -4,8 +4,6 @@
 
     $Contato = new Contato();
 
-    $contato = $Contato->find();
-
     $retornoEditar = null;
     if(isset($_POST['submit'])) {
 
@@ -33,18 +31,20 @@
 ?>
 <div class="row">
 	<div class="col-md-12">
-		<?php if($retornoEditar): ?>
-			<div class="alert alert-success">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-				<strong>Sucesso!</strong> Os dados foram alterados.
-			</div>
-		<?php endif ?>
+		<?php $contato = $Contato->find() ?>
 		<div class="content-box-large panel">
 			<div style="margin-top: 0" class="page-header">
 				<h1>Contato</h1>
 			</div>
 			<div class="panel-body">
 				<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+					<?php if($retornoEditar): ?>
+						<div class="alert alert-success">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong>Sucesso!</strong> Os dados foram alterados.
+						</div>
+					<?php endif ?>
 					
 					<div class="form-group">
 						<div class="col-md-10 col-md-offset-2">

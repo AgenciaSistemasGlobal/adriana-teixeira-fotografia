@@ -31,14 +31,14 @@ class Fotos extends Conexao{
 				albs.titulo as nomeAlbum,
 				albs.id as idAlbum
 			FROM fotos fts
-			LEFT JOIN albuns albs
+			INNER JOIN albuns albs
 			ON fts.id_album = albs.id
 			WHERE fts.id = ?
 		");
 		$find->bindValue(1, $_id);
 		$find->execute();
 
-		return parent::utf8ize($find->fetch());
+		return $find->fetch();
 	}
 
 	public function findByAlbum($_id){
@@ -52,7 +52,7 @@ class Fotos extends Conexao{
 				albs.titulo as nomeAlbum,
 				albs.id as idAlbum
 			FROM fotos fts
-			LEFT JOIN albuns albs
+			INNER JOIN albuns albs
 			ON fts.id_album = albs.id
 			WHERE fts.id_album = ?
 		");
@@ -60,7 +60,7 @@ class Fotos extends Conexao{
 		$findAll->bindValue(1, $_id);
 		$findAll->execute();
 
-		return parent::utf8ize($findAll->fetchAll());
+		return $findAll->fetchAll();
 	}
 
 	public function findAll(){
@@ -74,13 +74,13 @@ class Fotos extends Conexao{
 				albs.titulo as nomeAlbum,
 				albs.id as idAlbum
 			FROM fotos fts
-			LEFT JOIN albuns albs
+			INNER JOIN albuns albs
 			ON fts.id_album = albs.id
 		");
 
 		$findAll->execute();
 
-		return parent::utf8ize($findAll->fetchAll());
+		return $findAll->fetchAll();
 	}
 
 	public function editar($_id){

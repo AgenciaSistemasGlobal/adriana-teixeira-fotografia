@@ -61,7 +61,8 @@ $(document).ready(function(){
     $('input:not(:checked)').parent().removeClass("checked");
     $('input:checked').parent().addClass("checked");
 
-    $('#imgPreviewNovaFoto').attr('src', $('.apartir-de.checked>img').attr('src'));
+    $('#' + $(this).attr('data-imgpreview')).attr('src', $('.apartir-de.checked>img').attr('src'));
+
     $('.uploadPreview').removeAttr('required');
   });   
 });

@@ -4,7 +4,6 @@
 
     $Usuarios = new Usuarios();
     $usuarios = $Usuarios->findAll();
-    $usuario = $Usuarios->find(1);
 
     if($_POST) {
     	$Usuarios->setDados(
@@ -17,24 +16,26 @@
     $retornoEditar="";
     if(isset($_POST['editar'])) {
 
-    	$retornoEditar = $Usuarios->editar($usuario['id']);
+    	$retornoEditar = $Usuarios->editar($_SESSION['sudo_su']);
     }
 ?>
 
-<?php if($retornoEditar): ?>
-	<div class="alert alert-success">
-		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-		<strong>Sucesso!</strong> Os dados foram alterados.
-	</div>
-<?php endif ?>
 <div class="content-box-large">
 	<div style="margin-top: 0" class="page-header">
 		<h2>Perfil</h2>
 	</div>
 	<div class="panel-body">
+		<?php $usuario = $Usuarios->find($_SESSION['sudo_su']) ?>
 		<!-- Content -->
 		<?php if($usuario): ?>
 			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+				<?php if($retornoEditar): ?>
+					<div class="alert alert-success">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Sucesso!</strong> Os dados foram alterados.
+					</div>
+				<?php endif ?>
 
 				<div class="form-group">
 					<label for="inputNome" class="col-sm-2 control-label">Nome</label>

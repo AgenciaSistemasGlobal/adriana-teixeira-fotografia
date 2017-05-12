@@ -2,12 +2,15 @@
     
     require "server/Albuns.class.php";
     require "server/Servicos.class.php";
+    require "server/Fotos.class.php";
 
     $Albuns = new Albuns();
     $albuns = $Albuns->findAll();
 
     $Servicos = new Servicos();
     $servicos = $Servicos->findAll();
+
+    $Fotos = new Fotos();
 
     if($_POST) {
     	$Albuns->setDados(
@@ -30,12 +33,7 @@
 ?>
 
 <?php if($modulo3 == "novo"): ?>
-	<?php if($retornoCadastrar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram cadastrados.
-		</div>
-	<?php endif ?>
+	
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Novo Album</h2>
@@ -43,6 +41,13 @@
 		<div class="panel-body">
 			<!-- Content -->
 			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+				<?php if($retornoCadastrar): ?>
+					<div class="alert alert-success">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Sucesso!</strong> Os dados foram cadastrados.
+					</div>
+				<?php endif ?>
 
 				<div class="form-group">
 					<label for="inputId_servico" class="col-sm-2 control-label">Serviço</label>
@@ -93,12 +98,6 @@
 			die('<script type="text/javascript">window.location.href="albuns";</script>');
 		}
 ?>
-	<?php if($retornoEditar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram alterados.
-		</div>
-	<?php endif ?>
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Detalhes do Album</h2>
@@ -106,7 +105,15 @@
 		<div class="panel-body">
 			<!-- Content -->
 			<?php if($album): ?>
+
 				<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+					<?php if($retornoEditar): ?>
+						<div class="alert alert-success">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong>Sucesso!</strong> Os dados foram alterados.
+						</div>
+					<?php endif ?>
 
 					<div class="form-group">
 						<label for="inputId_servico" class="col-sm-2 control-label">Serviço</label>
@@ -169,16 +176,20 @@
 				<?php if(count($albuns)): ?>
 					<div class="row">
 						<?php foreach ($albuns as $_album): ?>
+							<?php $fotoByAlbum = $Fotos->findByAlbum($_album['id'])[0] ?>
 							<div class="col-md-4">
 								<a href="./albuns?u=<?php echo $_album['id'] ?>" title="<?php echo $_album['titulo'] ?>">
 									<div class="panel panel-default panel-card">
 										<div class="panel-image">
-											<img src="<?php echo URL::getBase() . 'server/uploads/' . (empty($_album['imagemFoto']) ? 'nophoto.svg' : $_album['imagemFoto']) ?>" class="img-responsive" title="<?php echo $_album['tituloFoto'] ?>" alt="<?php echo $_album['tituloFoto'] ?>">
+											<img src="<?php echo URL::getBase() . 'server/uploads/' . (empty($fotoByAlbum['imagem']) ? 'nophoto.svg' : $fotoByAlbum['imagem']) ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
 										</div>
 										<div class="panel-body">
+											<a href="?u=<?php echo $_album['id'] ?>&del=1" class="btn btn-danger pull-right">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+											</a>
 											<h4><?php echo $_album['titulo'] ?></h4>
 											<p><?php echo $_album['descricao'] ?></p>
-											<span class="label label-primary"><?php echo $_album['nomeServico'] ?></span>
+											<span class="label label-primary"><?php echo $Servicos->find($_album['id_servico'])['nome'] ?></span>
 											<span class="label label-success"><?php echo $_album['data'] ?></span>
 										</div>
 									</div>

@@ -12,7 +12,7 @@
     if($_POST) {
 
     	$imageBanner="";
-    	if(!empty($_FILES['imagem']['tmp_name'])) {
+    	if(!empty($_FILES['imagem']['name'])) {
     		$imageBanner=$_FILES['imagem']['name'];
     	} else {
     		$imageBanner=$_POST['imagemDe'];    		
@@ -25,7 +25,7 @@
     		$imageBanner
     	);
 
-    	if(!empty($_FILES['imagem']['tmp_name'])) {
+    	if(!empty($_FILES['imagem']['name'])) {
 	    	$target = "server/uploads/" . basename($_FILES['imagem']['name']);
 	    	move_uploaded_file($_FILES['imagem']['tmp_name'], $target);
     	}
@@ -43,12 +43,7 @@
 ?>
 
 <?php if($modulo3 == "novo"): ?>
-	<?php if($retornoCadastrar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram cadastrados.
-		</div>
-	<?php endif ?>
+	
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Novo Slide</h2>
@@ -56,6 +51,13 @@
 		<div class="panel-body">
 			<!-- Content -->
 			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+				<?php if($retornoCadastrar): ?>
+					<div class="alert alert-success">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Sucesso!</strong> Os dados foram cadastrados.
+					</div>
+				<?php endif ?>
 
 				<div class="form-group">
 					<div class="col-md-10 col-md-offset-2">
@@ -95,7 +97,7 @@
 									<div class="col-md-4">
 										<label class="apartir-de">
 											<img src="<?php echo URL::getBase() . 'server/uploads/' . $__foto['imagem'] ?>" class="img-responsive thumbnail" title="<?php echo $__foto['titulo'] ?>" alt="<?php echo $__foto['titulo'] ?>">
-											<input type="radio" name="imagemDe" class="radioApartirDe" value="<?php echo $__foto['imagem'] ?>">
+											<input type="radio" name="imagemDe" class="radioApartirDe" value="<?php echo $__foto['imagem'] ?>" data-imgpreview="imgPreviewNovaFoto">
 										</label>
 									</div>
 								<?php endforeach; ?>
@@ -122,12 +124,6 @@
 			die('<script type="text/javascript">window.location.href="banner";</script>');
 		}
 ?>
-	<?php if($retornoEditar): ?>
-		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong>Sucesso!</strong> Os dados foram alterados.
-		</div>
-	<?php endif ?>
 	<div class="content-box-large">
 		<div style="margin-top: 0" class="page-header">
 			<h2>Detalhes do Slide</h2>
@@ -136,6 +132,13 @@
 			<!-- Content -->
 			<?php if($slide): ?>
 				<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+					<?php if($retornoEditar): ?>
+						<div class="alert alert-success">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong>Sucesso!</strong> Os dados foram alterados.
+						</div>
+					<?php endif ?>
 
 					<div class="form-group">
 						<div class="col-md-10 col-md-offset-2">
@@ -165,9 +168,24 @@
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label" for="inputImagem">Imagem</label>
-						<div class="col-md-10">
+						<div class="col-md-4">
 							<input type="file" class="btn btn-default uploadPreview" id="inputImagem" name="imagem" data-imgpreview="imgPreviewEditarSlide">
 							<p class="help-block">A imagem se ajustará automaticamente</p>
+						</div>
+						<div class="col-md-6">
+							<h3 style="margin-top: 0;margin-bottom: 15px;">Escolha apartir de suas fotos</h3>
+							<div class="row">
+								<div class="apartir-de-minhas-fotos">
+									<?php foreach ($fotos as $___foto): ?>
+										<div class="col-md-4">
+											<label class="apartir-de">
+												<img src="<?php echo URL::getBase() . 'server/uploads/' . $___foto['imagem'] ?>" class="img-responsive thumbnail" title="<?php echo $___foto['titulo'] ?>" alt="<?php echo $___foto['titulo'] ?>">
+												<input type="radio" name="imagemDe" class="radioApartirDe" value="<?php echo $___foto['imagem'] ?>" data-imgpreview="imgPreviewEditarSlide">
+											</label>
+										</div>
+									<?php endforeach; ?>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
