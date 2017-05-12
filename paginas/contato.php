@@ -4,75 +4,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 contato">
                 <h2 class="wow fadeInDown"><?php echo $modulo2=="orcamento" ? "Solicitação de Orçamento" : "Vamos Conversar" ?></h2>
-                <?php
-                    require 'server/PHPMailerAutoload.php';
-
-                    $mail = new PHPMailer;
-
-                    //$mail->SMTPDebug = 3;                               // Enable verbose debug output
-
-                    $mail->isSMTP();                                      // Set mailer to use SMTP
-                    $mail->Host = 'smtp.servidor.com.br';  // Specify main and backup SMTP servers
-                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'muriloeduardoooooo@gmail.com';                 // SMTP username
-                    $mail->Password = 'liloeduardo0202';                           // SMTP password
-
-                    if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
-
-                        $mail->setFrom($_POST['email'], $_POST['name']);
-                        $mail->addReplyTo($_POST['email'], $_POST['name']);
-
-                        $mail->addAddress('adriana_teix@hotmail.com', 'Adriana Teixeira')
-                        $mail->addAddress('falecom@sistemasglobal.com.br', 'Murilo Eduardo dos Santos');
-                        $mail->addAddress('contato@adrianateixeirafotografia.com.br', 'Adriana Teixeira');
-                        
-
-                        $mail->isHTML(true);                                  // Set email format to HTML
-                        $mail->CharSet = 'iso-8859-1';
-
-                        $mail->Subject = 'Oba! Nova mensagem do site';
-
-                        $tipoContato = $modulo2=="orcamento" ? "Orçamento": "Contato";
-                        $mail->Body    = '<table>
-                                <thead>
-                                    <tr>
-                                        <td><strong>Cliente Solicitando ' . $tipoContato . '</strong></td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Nome do cliente:</td>
-                                        <td>' . $_POST['name'] . '</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Email do cliente:</td>
-                                        <td>' . $_POST['email'] . '</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mensagem do cliente:</td>
-                                        <td>' . $_POST['message'] . '</td>
-                                    </tr>
-                                </tbody>
-                            </table>';
-
-                        $enviado = $mail->Send();
-
-                        $mail->ClearAllRecipients();
-
-
-                        if(!$enviado) {
-                            echo '<div class="alert alert-danger">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <strong>Ó não!</strong> Mensagem não foi enviada.
-                                </div>';
-                        } else {
-                            echo '<div class="alert alert-success">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <strong>Agradecemos seu contato!</strong> Mensagem enviada corretamente.
-                                </div>';
-                        }
-                    }
-                ?>
+                
                 <form class="form-horizontal" action="" method="post">
                     <!-- Name input-->
                     <div class="form-group">
