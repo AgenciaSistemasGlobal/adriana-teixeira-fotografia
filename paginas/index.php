@@ -73,12 +73,12 @@
             <div class="container">
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">Menu</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand page-scroll transition" href="#page-top">
+                    <a class="navbar-brand page-scroll transition" href="<?php echo URL::getBase(); ?>">
                         <img src="<?php echo URL::getBase() ?>img/fotografia-adriana-teixeira-logotipo.png" class="img-responsive">
                     </a>
                 </div>
@@ -93,10 +93,10 @@
                             <a class="transition <?php echo $modulo == 'sobre' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>sobre">Sobre</a>
                         </li>
                         <li>
-                            <a class="transition <?php echo $modulo == 'trabalhos-realizados' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>trabalhos-realizados">Trabalhos Realizados</a>
+                            <a class="transition <?php echo $modulo == 'servicos' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>servicos">Serviços</a>
                         </li>
                         <li>
-                            <a class="transition <?php echo $modulo == 'servicos' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>servicos">Serviços</a>
+                            <a class="transition <?php echo $modulo == 'trabalhos-realizados' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>trabalhos-realizados">Trabalhos Realizados</a>
                         </li>
                         <li>
                             <a class="transition <?php echo $modulo == 'citacoes' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>citacoes">Citações</a>
@@ -160,7 +160,7 @@
                     <div class="col-md-3 col-lg-3">
                         <h4>Navegue pelo site</h4>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <a class="transition <?php echo $modulo == 'home' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>">Home</a>
@@ -169,14 +169,14 @@
                                         <a class="transition <?php echo $modulo == 'sobre' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>sobre">Sobre</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <a class="transition <?php echo $modulo == 'trabalhos-realizados' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>trabalhos-realizados">Trabalhos Realizados</a>
+                                        <a class="transition <?php echo $modulo == 'servicos' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>servicos">Serviços</a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                        <a class="transition <?php echo $modulo == 'servicos' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>servicos">Serviços</a>
+                                        <a class="transition <?php echo $modulo == 'trabalhos-realizados' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>trabalhos-realizados">Trabalhos Realizados</a>
                                     </li>
                                     <li class="list-group-item">
                                         <a class="transition <?php echo $modulo == 'citacoes' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>citacoes">Citações</a>
@@ -188,7 +188,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-lg-3">
+                    <div class="col-md-3 col-lg-3 col-xs-6 col-sm-6">
                         <h4>Vamos conversar?</h4>
                         <ul class="list-group infos-contatos">
                             <?php if($contato['telefone']): ?>
@@ -205,7 +205,7 @@
                             <?php endif ?>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-lg-2">
+                    <div class="col-md-2 col-lg-2 col-xs-6 col-sm-6">
                         <h4>Conecte-se a nós</h4>
                         <ul class="list-group">
                             <?php if($contato['facebook']): ?>

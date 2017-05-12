@@ -77,9 +77,15 @@
         </header>
         <nav class="breadcrumb caminho-internas">
             <div class="container">
-                <a class="breadcrumb-item" href="<?php echo URL::getBase() ?>">Home</a>
-                <a class="breadcrumb-item" href="<?php echo URL::getBase() . 'trabalhos-realizados' ?>">Trabalhos Realizados</a>
-                <a class="pull-right btn btn-primary" href="<?php echo URL::getBase() . 'trabalhos-realizados' ?>"><i class="fa fa-long-arrow-left pull-left" aria-hidden="true"></i> Voltar</a>
+                <div class="row">
+                    <div class="col-xs-7">
+                        <a class="breadcrumb-item" href="<?php echo URL::getBase() ?>">Home</a>
+                        <a class="breadcrumb-item" href="<?php echo URL::getBase() . 'trabalhos-realizados' ?>">Trabalhos Realizados</a>
+                    </div>
+                    <div class="col-xs-5">
+                        <a class="pull-right btn btn-primary" href="<?php echo URL::getBase() . 'trabalhos-realizados' ?>"><i class="fa fa-long-arrow-left pull-left" aria-hidden="true"></i> Voltar</a>
+                    </div>
+                </div>
             </div>
         </nav>
         <div class="container">

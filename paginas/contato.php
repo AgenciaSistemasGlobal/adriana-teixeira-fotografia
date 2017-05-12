@@ -12,24 +12,23 @@
                     //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
                     $mail->isSMTP();                                      // Set mailer to use SMTP
-                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                    $mail->Host = 'smtp.servidor.com.br';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
                     $mail->Username = 'muriloeduardoooooo@gmail.com';                 // SMTP username
                     $mail->Password = 'liloeduardo0202';                           // SMTP password
-                    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                    $mail->Port = 587;                                    // TCP port to connect to
 
                     if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
 
                         $mail->setFrom($_POST['email'], $_POST['name']);
                         $mail->addReplyTo($_POST['email'], $_POST['name']);
 
-                        /*$mail->addAddress('adriana_teix@hotmail.com', 'Adriana Teixeira')*/
-                        $mail->addAddress('murilosantoseduardo@gmail.com', 'Murilo Eduardo dos Santos');
-                        $mail->addAddress('drigo_reis@hotmail.com', 'Rodrigo Reis');
+                        $mail->addAddress('adriana_teix@hotmail.com', 'Adriana Teixeira')
+                        $mail->addAddress('falecom@sistemasglobal.com.br', 'Murilo Eduardo dos Santos');
+                        $mail->addAddress('contato@adrianateixeirafotografia.com.br', 'Adriana Teixeira');
                         
 
                         $mail->isHTML(true);                                  // Set email format to HTML
+                        $mail->CharSet = 'iso-8859-1';
 
                         $mail->Subject = 'Oba! Nova mensagem do site';
 
@@ -37,7 +36,7 @@
                         $mail->Body    = '<table>
                                 <thead>
                                     <tr>
-                                        <td>Cliente Solicitando <strong>' . $tipoContato . '</strong></td>
+                                        <td><strong>Cliente Solicitando ' . $tipoContato . '</strong></td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -56,8 +55,12 @@
                                 </tbody>
                             </table>';
 
+                        $enviado = $mail->Send();
 
-                        if(!$mail->send()) {
+                        $mail->ClearAllRecipients();
+
+
+                        if(!$enviado) {
                             echo '<div class="alert alert-danger">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                     <strong>Ó não!</strong> Mensagem não foi enviada.

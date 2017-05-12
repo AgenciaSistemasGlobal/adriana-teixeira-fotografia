@@ -56,6 +56,9 @@
                   <li>
                     <a href="<?php echo URL::getBase() ?>" class="btn btn-default">Ver Site</a>
                   </li>
+                  <li>
+                    <a href="https://webmail.umbler.com/" target="_blank" class="btn btn-primary">Webmail</a>
+                  </li>
                 </ul>
               </nav>
           </div>
@@ -69,6 +72,8 @@
   		    <div class="col-md-2">
   		  	<div class="sidebar content-box" style="display: block;">
                   <ul class="nav">
+                    <li><a href="<?php echo URL::getBase() ?>adm/banner"><i class="glyphicon glyphicon-hd-video"></i> Banner</a></li>
+                    <li><a href="<?php echo URL::getBase() ?>adm/sobre"><i class="glyphicon glyphicon-align-left"></i> Sobre</a></li>
                     <li><a href="<?php echo URL::getBase() ?>adm/servicos"><i class="glyphicon glyphicon-wrench"></i> Servicos</a></li>
                     <li class="submenu <?php if($modulo2 == 'albuns' || $modulo2 == 'fotos') echo 'open' ?>">
                          <a href="<?php echo URL::getBase() ?>adm/fotos">
@@ -80,11 +85,9 @@
                             <li><a href="<?php echo URL::getBase() ?>adm/fotos">Fotos</a></li>
                         </ul>
                     </li>
-                    <li><a href="<?php echo URL::getBase() ?>adm/banner"><i class="glyphicon glyphicon-hd-video"></i> Banner</a></li>
-                    <li><a href="<?php echo URL::getBase() ?>adm/sobre"><i class="glyphicon glyphicon-align-left"></i> Sobre</a></li>
+                    <li><a href="<?php echo URL::getBase() ?>adm/citacoes"><i class="glyphicon glyphicon-tags"></i> Citações</a></li>
                     <li><a href="<?php echo URL::getBase() ?>adm/contato"><i class="glyphicon glyphicon-earphone"></i> Contato</a></li>
                     <li><a href="<?php echo URL::getBase() ?>adm/clientes"><i class="glyphicon glyphicon-user"></i> Clientes</a></li>
-                    <li><a href="<?php echo URL::getBase() ?>adm/citacoes"><i class="glyphicon glyphicon-tags"></i> Citações</a></li>
                   </ul>
            </div>
   		  </div>

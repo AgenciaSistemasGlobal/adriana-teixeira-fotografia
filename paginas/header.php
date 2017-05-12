@@ -4,12 +4,14 @@
 ?>
 <header id="carousel-header" class="carousel slide">
     
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <?php foreach ($slides as $_key => $_slide): ?>
-            <li data-target="#carousel-header" data-slide-to="<?php echo $_key ?>" class="<?php if(!$_key) echo 'active' ?>"></li>
-        <?php endforeach ?>
-    </ol>
+    <?php if(count($slides)>1): ?>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <?php foreach ($slides as $_key => $_slide): ?>
+                <li data-target="#carousel-header" data-slide-to="<?php echo $_key ?>" class="<?php if(!$_key) echo 'active' ?>"></li>
+            <?php endforeach ?>
+        </ol>
+    <?php endif ?>
 
     <!-- Wrapper for Slides -->
     <div class="carousel-inner">
@@ -32,14 +34,16 @@
             </div>
         <?php endforeach ?>
 
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#carousel-header" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-header" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <?php if(count($slides)>1): ?>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#carousel-header" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-header" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        <?php endif ?>
     </div>
 </header>

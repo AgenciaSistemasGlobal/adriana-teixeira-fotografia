@@ -12,11 +12,7 @@
                 <p><?php echo $sobre['texto'] ?></p>
 
                 <div class="action-bottom wow fadeInUp">
-                    <?php if($modulo = "home"): ?>
-                        <a href="<?php echo URL::getBase() ?>sobre" class="btn btn-primary transition btn-lg">Conheça-me Melhor<i class="fa fa-heart" aria-hidden="true"></i></a>
-                    <?php else: ?>
-                        <a href="<?php echo URL::getBase() ?>contato" class="btn btn-primary transition btn-lg">Faça um Contato<i class="fa fa-phone" aria-hidden="true"></i></a>
-                    <?php endif ?>
+                    <a href="<?php echo URL::getBase() ?>contato" class="btn btn-primary transition btn-lg">Faça um Contato<i class="fa fa-phone" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
