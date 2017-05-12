@@ -157,38 +157,7 @@
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-lg-3">
-                        <h4>Navegue pelo site</h4>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <a class="transition <?php echo $modulo == 'home' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>">Home</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="transition <?php echo $modulo == 'sobre' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>sobre">Sobre</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="transition <?php echo $modulo == 'servicos' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>servicos">Serviços</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <a class="transition <?php echo $modulo == 'trabalhos-realizados' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>trabalhos-realizados">Trabalhos Realizados</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="transition <?php echo $modulo == 'citacoes' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>citacoes">Citações</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a class="transition <?php echo $modulo == 'contato' ? 'active' : '' ?>" href="<?php echo URL::getBase(); ?>contato">Contato</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-lg-3 col-xs-6 col-sm-6">
+                    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-6">
                         <h4>Vamos conversar?</h4>
                         <ul class="list-group infos-contatos">
                             <?php if($contato['telefone']): ?>
@@ -205,7 +174,7 @@
                             <?php endif ?>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-lg-2 col-xs-6 col-sm-6">
+                    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-6">
                         <h4>Conecte-se a nós</h4>
                         <ul class="list-group">
                             <?php if($contato['facebook']): ?>
@@ -231,7 +200,7 @@
                             <?php endif ?>
                         </ul>
                     </div>
-                    <div class="col-md-4 col-lg-4">
+                    <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
                         <div class="fb-page" data-href="https://www.facebook.com/FacebookBrasil/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/FacebookBrasil/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FacebookBrasil/">Facebook</a></blockquote></div>
                     </div>
                 </div>
