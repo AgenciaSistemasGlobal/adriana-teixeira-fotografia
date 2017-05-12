@@ -69,6 +69,7 @@
   		    <div class="col-md-2">
   		  	<div class="sidebar content-box" style="display: block;">
                   <ul class="nav">
+                    <li><a href="<?php echo URL::getBase() ?>adm/servicos"><i class="glyphicon glyphicon-wrench"></i> Servicos</a></li>
                     <li class="submenu <?php if($modulo2 == 'albuns' || $modulo2 == 'fotos') echo 'open' ?>">
                          <a href="<?php echo URL::getBase() ?>adm/fotos">
                             <i class="glyphicon glyphicon-camera"></i> Trabalhos
@@ -82,7 +83,6 @@
                     <li><a href="<?php echo URL::getBase() ?>adm/banner"><i class="glyphicon glyphicon-hd-video"></i> Banner</a></li>
                     <li><a href="<?php echo URL::getBase() ?>adm/sobre"><i class="glyphicon glyphicon-align-left"></i> Sobre</a></li>
                     <li><a href="<?php echo URL::getBase() ?>adm/contato"><i class="glyphicon glyphicon-earphone"></i> Contato</a></li>
-                    <li><a href="<?php echo URL::getBase() ?>adm/servicos"><i class="glyphicon glyphicon-wrench"></i> Servicos</a></li>
                     <li><a href="<?php echo URL::getBase() ?>adm/clientes"><i class="glyphicon glyphicon-user"></i> Clientes</a></li>
                     <li><a href="<?php echo URL::getBase() ?>adm/citacoes"><i class="glyphicon glyphicon-tags"></i> Citações</a></li>
                   </ul>
