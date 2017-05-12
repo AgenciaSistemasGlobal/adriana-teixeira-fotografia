@@ -666,7 +666,8 @@ body {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   border: none;
 }
-.collapse.navbar-collapse.bs-navbar-collapse.navbar-right .btn.btn-default {
+.collapse.navbar-collapse.bs-navbar-collapse.navbar-right .btn.btn-default,
+.collapse.navbar-collapse.bs-navbar-collapse.navbar-right .btn.btn-primary {
   padding-top: 6px;
   padding-bottom: 6px;
   margin: 7.5px;
