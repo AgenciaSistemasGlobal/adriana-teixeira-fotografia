@@ -672,6 +672,9 @@ body {
   padding-bottom: 6px;
   margin: 7.5px;
 }
+.collapse.navbar-collapse.bs-navbar-collapse.navbar-right .btn.btn-primary {
+  color: #fff;
+}
 .apartir-de {
   cursor: pointer;
   position: relative;
