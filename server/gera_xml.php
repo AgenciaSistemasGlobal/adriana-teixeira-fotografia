@@ -1,5 +1,6 @@
 <?php
 require_once('Url.class.php');
+require_once('Conexao.class.php');
 require_once('Albuns.class.php');
 require_once('Servicos.class.php');
 
