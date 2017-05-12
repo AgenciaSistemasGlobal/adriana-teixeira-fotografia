@@ -28,7 +28,7 @@
                         
 
                         $mail->isHTML(true);                                  // Set email format to HTML
-                        $mail->CharSet = 'iso-8859-1';
+                        $mail->CharSet = 'UTF-8';
 
                         $mail->Subject = 'Oba! Nova mensagem do site';
 
