@@ -12,10 +12,10 @@
                     //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
                     $mail->isSMTP();                                      // Set mailer to use SMTP
-                    $mail->Host = 'smtp.servidor.com.br';  // Specify main and backup SMTP servers
+                    $mail->Host = 'smtp.adrianateixeirafotografia.com.br';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'muriloeduardoooooo@gmail.com';                 // SMTP username
-                    $mail->Password = 'liloeduardo0202';                           // SMTP password
+                    $mail->Username = 'contato@adrianateixeirafotografia.com.br';                 // SMTP username
+                    $mail->Password = 'adrianateix';                           // SMTP password
 
                     if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
 
