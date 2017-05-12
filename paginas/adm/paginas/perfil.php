@@ -1,6 +1,6 @@
 <?php
     
-    require "/server/Usuarios.class.php";
+    require "server/Usuarios.class.php";
 
     $Usuarios = new Usuarios();
     $usuarios = $Usuarios->findAll();

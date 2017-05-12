@@ -5,7 +5,7 @@
             <div class="col-lg-6 col-md-6 contato">
                 <h2 class="wow fadeInDown"><?php echo $modulo2=="orcamento" ? "Solicitação de Orçamento" : "Vamos Conversar" ?></h2>
                 <?php
-                    require '/server/PHPMailerAutoload.php';
+                    require 'server/PHPMailerAutoload.php';
 
                     $mail = new PHPMailer;
 
@@ -16,8 +16,8 @@
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
                     $mail->Username = 'muriloeduardoooooo@gmail.com';                 // SMTP username
                     $mail->Password = 'liloeduardo0202';                           // SMTP password
-                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                    $mail->Port = 465;                                    // TCP port to connect to
+                    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port = 587;                                    // TCP port to connect to
 
                     if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
 

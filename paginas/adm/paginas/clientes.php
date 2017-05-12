@@ -1,6 +1,6 @@
 <?php
     
-    require "/server/Clientes.class.php";
+    require "server/Clientes.class.php";
 
     $Clientes = new Clientes();
 

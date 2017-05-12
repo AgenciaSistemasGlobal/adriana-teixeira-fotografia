@@ -101,45 +101,45 @@
             </div>
         </div>
     </section>
-<?php endif ?>
-<!-- The Modal -->
-<div id="modal-galeria-fotos" class="modal">
-    <span class="close">&times;</span>
-    <div id="carousel-fotos-album" class="carousel slide text-center" data-ride="carousel">
+    <!-- Modal de Fotos -->
+    <div id="modal-galeria-fotos" class="modal">
+        <span class="close">&times;</span>
+        <div id="carousel-fotos-album" class="carousel slide text-center" data-ride="carousel">
 
-        <?php if(count($albumUniqFotos)>1): ?>
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <?php foreach ($albumUniqFotos as $key => $_albumUniqFotos): ?>
-                    <li data-target="#carousel-fotos-album" id="idCapFoto<?php echo $_albumUniqFotos['id'] ?>" data-slide-to="<?php echo $key ?>"></li>
-                <?php endforeach ?>
-            </ol>
-        <?php endif ?>
+            <?php if(count($albumUniqFotos)>1): ?>
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <?php foreach ($albumUniqFotos as $key => $_albumUniqFotos): ?>
+                        <li data-target="#carousel-fotos-album" id="idCapFoto<?php echo $_albumUniqFotos['id'] ?>" data-slide-to="<?php echo $key ?>"></li>
+                    <?php endforeach ?>
+                </ol>
+            <?php endif ?>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <?php foreach ($albumUniqFotos as $_key => $_albumUniqFotos): ?>
-                <div id="idSlideFoto<?php echo $_albumUniqFotos['id'] ?>" class="item <?php if(!$_key) echo 'active' ?>">
-                    <img src="<?php echo URL::getBase() . "server/uploads/" . $_albumUniqFotos['imagem'] ?>" alt="<?php echo $_albumUniqFotos['titulo'] ?>" title="<?php echo $_albumUniqFotos['titulo'] ?>" class="img-responsive" style="margin: 0 auto">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <?php foreach ($albumUniqFotos as $_key => $_albumUniqFotos): ?>
+                    <div id="idSlideFoto<?php echo $_albumUniqFotos['id'] ?>" class="item <?php if(!$_key) echo 'active' ?>">
+                        <img src="<?php echo URL::getBase() . "server/uploads/" . $_albumUniqFotos['imagem'] ?>" alt="<?php echo $_albumUniqFotos['titulo'] ?>" title="<?php echo $_albumUniqFotos['titulo'] ?>" class="img-responsive" style="margin: 0 auto">
 
-                    <div class="carousel-caption">
-                        <h2 class="animated fadeInDown"><?php echo $_albumUniqFotos['titulo'] ?></h2>
-                        <p class="animated fadeInDown"><?php echo $_albumUniqFotos['descricao'] ?></p>
+                        <div class="carousel-caption">
+                            <h2 class="animated fadeInDown"><?php echo $_albumUniqFotos['titulo'] ?></h2>
+                            <p class="animated fadeInDown"><?php echo $_albumUniqFotos['descricao'] ?></p>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach ?>
-        </div>
+                <?php endforeach ?>
+            </div>
 
-        <?php if(count($albumUniqFotos)>1): ?>
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#carousel-fotos-album" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-fotos-album" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        <?php endif ?>
+            <?php if(count($albumUniqFotos)>1): ?>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#carousel-fotos-album" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-fotos-album" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            <?php endif ?>
+        </div>
     </div>
-</div>
+<?php endif ?>

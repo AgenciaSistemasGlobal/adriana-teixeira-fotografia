@@ -1,7 +1,7 @@
 <?php
     
-    require "/server/Fotos.class.php";
-    require "/server/Albuns.class.php";
+    require "server/Fotos.class.php";
+    require "server/Albuns.class.php";
 
     $Albuns = new Albuns();
     $albuns = $Albuns->findAll();
@@ -9,26 +9,43 @@
     $Fotos = new Fotos();
     $fotos = $Fotos->findAll();
 
-    if($_POST) {
-    	$Fotos->setDados(
-    		$_POST['id_album'], 
-    		$_POST['titulo'], 
-    		$_POST['descricao'],
-    		$_FILES['imagem']['name']
-    	);
-
-    	$target = "./server/uploads/" . basename($_FILES['imagem']['name']);
-    	move_uploaded_file($_FILES['imagem']['tmp_name'], $target);
-    }
-
     $retornoEditar="";
     $retornoCadastrar="";
-    if(isset($_POST['cadastrar'])) {
-    	
-    	$retornoCadastrar = $Fotos->cadastrar();
-    } elseif(isset($_POST['editar'])) {
 
-    	$retornoEditar = $Fotos->editar($_GET['u']);
+    if($_POST) {
+	    
+	    if(isset($_POST['cadastrar'])) {
+		
+		    foreach($_FILES["imagem"]["tmp_name"] as $key=>$tmp_name) {
+		
+		    	$Fotos->setDados(
+		    		$_POST['id_album'], 
+		    		$_POST['titulo'], 
+		    		$_POST['descricao'],
+		    		$_FILES['imagem']['name'][$key]
+		    	);
+
+		    	$target = "server/uploads/" . basename($_FILES['imagem']['name'][$key]);
+		    	move_uploaded_file($_FILES['imagem']['tmp_name'][$key], $target);
+
+		    	$retornoCadastrar = $Fotos->cadastrar();
+		    }
+	    }
+
+	    if(isset($_POST['editar'])) {
+
+	    	$Fotos->setDados(
+	    		$_POST['id_album'], 
+	    		$_POST['titulo'], 
+	    		$_POST['descricao'],
+	    		$_FILES['imagem']['name']
+	    	);
+
+	    	$targetEdit = "server/uploads/" . basename($_FILES['imagem']['name']);
+	    	move_uploaded_file($_FILES['imagem']['tmp_name'], $targetEdit);
+
+	    	$retornoEditar = $Fotos->editar($_GET['u']);
+	    }
     }
 ?>
 
@@ -49,7 +66,7 @@
 
 				<div class="form-group">
 					<div class="col-md-10 col-md-offset-2">
-						<img src="" alt="" id="imgPreviewNovaFoto" class="img-responsive thumbnail">
+						<div id="imgPreviewNovaFoto" class="row"></div>
 					</div>
 				</div>
 
@@ -74,14 +91,13 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao">
-						</textarea>
+						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-md-2 control-label" for="inputImagem">Imagem</label>
 					<div class="col-md-10">
-						<input type="file" class="btn btn-default uploadPreview" id="inputImagem" name="imagem" data-imgpreview="imgPreviewNovaFoto" required>
+						<input type="file" class="btn btn-default uploadPreview" id="inputImagem" name="imagem[]" data-imgpreview="imgPreviewNovaFoto" multiple required>
 						<p class="help-block">A imagem se ajustará automaticamente</p>
 					</div>
 				</div>
@@ -147,15 +163,13 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao">
-								<?php echo $foto['descricao'] ?>
-							</textarea>
+							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao"><?php echo $foto['descricao'] ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label" for="inputImagem">Imagem</label>
 						<div class="col-md-10">
-							<input type="file" class="btn btn-default uploadPreview" id="inputImagem" name="imagem" data-imgpreview="imgPreviewEditarFoto">
+							<input type="file" class="btn btn-default uploadPreviewEdit" id="inputImagem" name="imagem" data-imgpreview="imgPreviewEditarFoto">
 							<p class="help-block">A imagem se ajustará automaticamente</p>
 						</div>
 					</div>
@@ -196,6 +210,9 @@
 											<img src="<?php echo URL::getBase() . 'server/uploads/' . $_foto['imagem'] ?>" class="img-responsive" title="<?php echo $_foto['titulo'] ?>" alt="<?php echo $_foto['titulo'] ?>">
 										</div>
 										<div class="panel-body">
+											<a href="?u=<?php echo $_foto['id'] ?>&del=1" class="btn btn-danger pull-right">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+											</a>
 											<h4><?php echo $_foto['titulo'] ?></h4>
 											<p><?php echo $_foto['descricao'] ?></p>
 											<span class="label label-primary"><?php echo $_foto['nomeAlbum'] ?></span>

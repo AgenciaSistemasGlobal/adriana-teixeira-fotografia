@@ -1,6 +1,6 @@
 <?php
     
-    require "/server/Citacoes.class.php";
+    require "server/Citacoes.class.php";
 
     $Citacoes = new Citacoes();
     $citacoes = $Citacoes->findAll();
@@ -47,8 +47,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
-						</textarea>
+						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required></textarea>
 					</div>
 				</div>
 				<div class="form-group">
@@ -95,9 +94,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
-								<?php echo $citacao['descricao'] ?>
-							</textarea>
+							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required><?php echo $citacao['descricao'] ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">

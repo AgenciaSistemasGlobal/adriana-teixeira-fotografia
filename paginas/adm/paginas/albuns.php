@@ -1,7 +1,7 @@
 <?php
     
-    require "/server/Albuns.class.php";
-    require "/server/Servicos.class.php";
+    require "server/Albuns.class.php";
+    require "server/Servicos.class.php";
 
     $Albuns = new Albuns();
     $albuns = $Albuns->findAll();
@@ -65,8 +65,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
-						</textarea>
+						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required></textarea>
 					</div>
 				</div>
 				<div class="form-group">
@@ -131,9 +130,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="inputDescricao">Descrição</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required>
-								<?php echo $album['descricao'] ?>
-							</textarea>
+							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputDescricao" required><?php echo $album['descricao'] ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">

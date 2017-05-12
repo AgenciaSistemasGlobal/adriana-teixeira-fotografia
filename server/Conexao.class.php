@@ -9,10 +9,10 @@ abstract class Conexao{
 	const PASS = "";
 	const DB = "adriana-teixeira-fotografia";*/
 
-	const HOST = "mysql.hostinger.com.br";
-    const USER = "u133061497_muri";
-	const PASS = "liloeduardo0202";
-	const DB = "u133061497_adria";
+	const HOST = "mysql796.umbler.com";
+    const USER = "desenvolvedores";
+	const PASS = "O2wLm4}]fd";
+	const DB = "adriana-teixeira";
 
 	private static $instance = null;
 

@@ -1,5 +1,5 @@
 <?php
-  require "/server/Login.class.php";
+  require "server/Login.class.php";
 
   if(isset($_GET['logout']) && $_GET['logout']) {
     Login::logout(URL::getBase());
@@ -14,6 +14,10 @@
   	<meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Seja bem-vindo à Adriana Teixeira Fotografia, conheça nosso trabalho e faça um contato.">
+
+    <link rel="icon" type="image/png" href="<?php echo URL::getBase() ?>img/favico/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="<?php echo URL::getBase() ?>img/favico/favicon-16x16.png" sizes="16x16" />
 
     <title>Administrador do Site - Adriana Teixeira Fotografia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,7 +93,7 @@
             <li class="breadcrumb-item"><a href="<?php echo URL::getBase() ?>adm">Painel de Controle</a></li>
             <li class="breadcrumb-item"><a href="<?php echo URL::getBase() . 'adm/' . $modulo2 ?>"><?php echo $modulo2 ?></a></li>
             <?php if(isset($_GET['u'])): ?>
-              <li class="breadcrumb-item active"><?php echo $_GET['u'] ?></li>
+              <li class="breadcrumb-item active">Detalhes</li>
             <?php endif ?>
           </ol>
   		  	<?php

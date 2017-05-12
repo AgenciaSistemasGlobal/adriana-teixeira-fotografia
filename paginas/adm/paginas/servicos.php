@@ -1,6 +1,6 @@
 <?php
     
-    require "/server/Servicos.class.php";
+    require "server/Servicos.class.php";
 
     $Servicos = new Servicos();
 
@@ -13,7 +13,7 @@
     		$_FILES['imagem']['name']
     	);
 
-    	$target = "./server/uploads/" . basename($_FILES['imagem']['name']);
+    	$target = "server/uploads/" . basename($_FILES['imagem']['name']);
     	move_uploaded_file($_FILES['imagem']['tmp_name'], $target);
     }
 
@@ -58,8 +58,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="ckeditor_full">Descrição</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" placeholder="Descrição" name="descricao" id="ckeditor_full" required>
-						</textarea>
+						<textarea class="form-control" placeholder="Descrição" name="descricao" id="ckeditor_full" required></textarea>
 					</div>
 				</div>
 				<div class="form-group">
@@ -118,9 +117,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="ckeditor_full">Descrição</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Descrição" name="descricao" id="ckeditor_full" required>
-								<?php echo $servico['descricao'] ?>
-							</textarea>
+							<textarea class="form-control" placeholder="Descrição" name="descricao" id="ckeditor_full" required><?php echo $servico['descricao'] ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">

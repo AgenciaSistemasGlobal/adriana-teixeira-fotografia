@@ -1,6 +1,6 @@
 <?php
     
-    require "/server/Sobre.class.php";
+    require "server/Sobre.class.php";
 
     $Sobre = new Sobre();
 
@@ -9,7 +9,7 @@
     $retornoEditar = null;
     if(isset($_POST['submit'])) {
 
-    	$target = "./server/uploads/" . basename($_FILES['imagem']['name']);
+    	$target = "server/uploads/" . basename($_FILES['imagem']['name']);
 
     	$Sobre->setDados($_POST['titulo'], $_FILES['imagem']['name'], $_POST['texto']);
     	
@@ -58,9 +58,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="ckeditor_full">Texto</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Texto" name="texto" id="ckeditor_full" required>
-								<?php echo $sobre['texto'] ?>
-							</textarea>
+							<textarea class="form-control" placeholder="Texto" name="texto" id="ckeditor_full" required><?php echo $sobre['texto'] ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">

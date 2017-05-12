@@ -1,11 +1,11 @@
 <?php
-    require "/server/Banner.class.php";
-    require "/server/Sobre.class.php";
-    require "/server/Citacoes.class.php";
-    require "/server/Servicos.class.php";
-    require "/server/Contato.class.php";
-    require "/server/Albuns.class.php";
-    require "/server/Fotos.class.php";
+    require "server/Banner.class.php";
+    require "server/Sobre.class.php";
+    require "server/Citacoes.class.php";
+    require "server/Servicos.class.php";
+    require "server/Contato.class.php";
+    require "server/Albuns.class.php";
+    require "server/Fotos.class.php";
 
     $Contato = new Contato();
     $contato = $Contato->find();
@@ -17,8 +17,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
+        <meta name="description" content="Seja bem-vindo à Adriana Teixeira Fotografia, conheça nosso trabalho e faça um contato.">
         <meta name="author" content="Agência Digital Sistemas Global">
+        
+        <link rel="icon" type="image/png" href="<?php echo URL::getBase() ?>img/favico/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="<?php echo URL::getBase() ?>img/favico/favicon-16x16.png" sizes="16x16" />
 
         <title>Adriana Teixeira Fotografia</title>
 
@@ -130,10 +133,11 @@
 
         <?php
      
-            if(file_exists("paginas/" . $modulo . ".php"))
+            if(file_exists("paginas/" . $modulo . ".php")) {
                 require "paginas/" . $modulo . ".php";
-            else
+            } else {
                 require "paginas/404.php";
+            }
         ?>
 
         <footer>

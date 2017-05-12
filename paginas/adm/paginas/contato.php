@@ -1,6 +1,6 @@
 <?php
     
-    require "/server/Contato.class.php";
+    require "server/Contato.class.php";
 
     $Contato = new Contato();
 
@@ -9,7 +9,7 @@
     $retornoEditar = null;
     if(isset($_POST['submit'])) {
 
-    	$target = "./server/uploads/" . basename($_FILES['imagem']['name']);
+    	$target = "server/uploads/" . basename($_FILES['imagem']['name']);
 
     	$Contato->setDados(
     		$_POST['endereco'], 
