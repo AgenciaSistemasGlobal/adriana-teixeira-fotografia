@@ -1,6 +1,24 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off 
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+	RewriteRule ^sitemap\.xml$ endpoints/gera_xml.php [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteRule . index.php [L]
+</IfModule>
+
+<FilesMatch "\.(gif|jpg|png|css|js|pdf|txt)">
+    FileETag All
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule . index.php [L]
+</IfModule>
