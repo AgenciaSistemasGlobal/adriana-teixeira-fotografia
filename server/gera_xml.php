@@ -26,13 +26,13 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
   <url>
     <loc>https://adrianateixeirafotografia.com.br/sobre</loc>
     <lastmod><?php echo $hoje;?></lastmod>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://adrianateixeirafotografia.com.br/trabalhos-realizados</loc>
     <lastmod><?php echo $hoje;?></lastmod>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
   <?php
@@ -41,14 +41,14 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
       <loc>https://adrianateixeirafotografia.com.br/trabalhos-realizados/" . $albuns[$i]['id'] . '-' . URL::removeAcentos($albuns[$i]['titulo'], '_') . "</loc>
       <lastmod>".$hoje."</lastmod>
       <changefreq>daily</changefreq>
-      <priority>0.8</priority>
+      <priority>1.0</priority>
     </url>";
   }
   ?>
   <url>
     <loc>https://adrianateixeirafotografia.com.br/servicos</loc>
     <lastmod><?php echo $hoje;?></lastmod>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
   <?php
@@ -57,20 +57,20 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
       <loc>https://adrianateixeirafotografia.com.br/servicos/" . $servicos[$j]['id'] . '-' . URL::removeAcentos($servicos[$j]['nome'], '_') . "</loc>
       <lastmod>".$hoje."</lastmod>
       <changefreq>daily</changefreq>
-      <priority>0.8</priority>
+      <priority>1.0</priority>
     </url>";
   }
   ?>
   <url>
     <loc>https://adrianateixeirafotografia.com.br/citacoes</loc>
     <lastmod><?php echo $hoje;?></lastmod>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://adrianateixeirafotografia.com.br/contato</loc>
     <lastmod><?php echo $hoje;?></lastmod>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
 </urlset>
