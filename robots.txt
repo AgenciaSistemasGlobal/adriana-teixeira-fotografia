@@ -1,0 +1,15 @@
+Sitemap: https://adrianateixeirafotografia.com.br/sitemap.xml
+
+User-agent: *
+Disallow: /paginas
+Disallow: /server
+Disallow: /fonts
+Disallow: /css
+Disallow: /js
+
+Allow: https://adrianateixeirafotografia.com.br/
+Allow: https://adrianateixeirafotografia.com.br/sobre
+Allow: https://adrianateixeirafotografia.com.br/trabalhos-realizados
+Allow: https://adrianateixeirafotografia.com.br/servicos
+Allow: https://adrianateixeirafotografia.com.br/citacoes
+Allow: https://adrianateixeirafotografia.com.br/contato
