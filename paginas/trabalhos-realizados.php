@@ -56,7 +56,7 @@
                                         $stringFile = "uploads/nophoto.svg";
                                         
                                         if(!is_null($fotoByAlbum)) {
-                                            $stringFile = "thumb.php?img=" . $fotoByAlbum . "&width=360&height=150";
+                                            $stringFile = "thumb.php?img=" . $fotoByAlbum["imagem"] . "&width=360&height=150";
                                         }
                                         
                                         $urlPrepare = URL::getBase() . "server/" . $stringFile;
