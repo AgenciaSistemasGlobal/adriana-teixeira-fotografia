@@ -157,7 +157,7 @@
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-6">
+                    <div class="col-md-5 col-lg-5 col-xs-6 col-sm-6">
                         <h4>Vamos conversar?</h4>
                         <ul class="list-group infos-contatos">
                             <?php if($contato['telefone']): ?>
@@ -174,7 +174,7 @@
                             <?php endif ?>
                         </ul>
                     </div>
-                    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-6">
+                    <div class="col-md-3 col-lg-3 col-xs-6 col-sm-6">
                         <h4>Conecte-se a nós</h4>
                         <ul class="list-group">
                             <?php if($contato['facebook']): ?>
@@ -201,7 +201,6 @@
                         </ul>
                     </div>
                     <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-
                         <div class="fb-page" data-href="https://www.facebook.com/adrianateixeirafotografia/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/adrianateixeirafotografia/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/adrianateixeirafotografia/">Adriana Teixeira Fotografia</a></blockquote></div>
                     </div>
                 </div>
