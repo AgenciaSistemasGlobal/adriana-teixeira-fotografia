@@ -53,7 +53,7 @@
                                     <?php endif ?>
                                     <?php
                                         //$urlPrepare = URL::getBase() . "server/thumb.php?img=";
-                                    echo $fotoByAlbum['imagem'];
+                                    var_dump($fotoByAlbum['imagem']);
                                     ?>
                                     <!-- <img src="<?php echo $urlPrepare . '&width=360&height=150' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>"> -->
                                 </div>
