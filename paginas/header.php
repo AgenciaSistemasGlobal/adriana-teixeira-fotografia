@@ -17,7 +17,7 @@
     <div class="carousel-inner">
         
         <?php foreach ($slides as $key => $slide): ?>
-            <div class="item <?php if(!$key) echo 'active' ?>">
+            <div class="item lazy-load <?php if(!$key) echo 'active' ?>">
                 <!-- Set the first background image using inline CSS below. -->
                 <div class="fill" style="background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)), url('<?php echo URL::getBase() . "server/uploads/" . $slide['imagem'] ?>');"></div>
                 <div class="carousel-caption">

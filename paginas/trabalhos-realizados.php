@@ -42,13 +42,15 @@
                             <div class="post-module"> 
                                 <!-- Thumbnail-->
                                 <div class="thumbnail">
-                                    <div class="date transition">
-                                        <a href="<?php echo URL::getBase() . 'trabalhos-realizados/' . $album['id'] . '-' . URL::removeAcentos($album['titulo'], '_') ?>">
-                                            <div class="day">
-                                                Ver Fotos
-                                            </div>
-                                        </a>
-                                    </div>
+                                    <?php if($fotoByAlbum): ?>
+                                        <div class="date transition">
+                                            <a href="<?php echo URL::getBase() . 'trabalhos-realizados/' . $album['id'] . '-' . URL::removeAcentos($album['titulo'], '_') ?>">
+                                                <div class="day">
+                                                    Ver Fotos
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <?php endif ?>
                                     <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . $fotoByAlbum['imagem'] . '&width=360&height=150' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
                                 </div>
                                 <!-- Post Content-->

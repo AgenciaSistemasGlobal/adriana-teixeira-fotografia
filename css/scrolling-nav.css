@@ -1110,3 +1110,6 @@ footer a:hover {
       background-color: #fff;
     }
 }
+.lazy-load {
+    background: url("http://www.mozart.it/images/preloader.gif") center center no-repeat;
+}
