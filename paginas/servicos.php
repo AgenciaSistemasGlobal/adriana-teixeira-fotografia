@@ -23,7 +23,7 @@
                         <a href="<?php echo URL::getBase() . 'servicos/' . $servico['id'] . '-' . URL::removeAcentos($servico['nome'], '_') ?>">
                             <div class="thumbnail">
                                 <header>
-                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . $servico['imagem'] . '&width=360&height=150' ?>" title="<?php echo $servico['nome'] ?>" class="img-responsive">
+                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . $servico['imagem'] . '&width=360&height=175' ?>" title="<?php echo $servico['nome'] ?>" class="img-responsive">
                                 </header>
                                 <div class="caption">
                                     <h3><?php echo $servico['nome'] ?><small></small></h3>
