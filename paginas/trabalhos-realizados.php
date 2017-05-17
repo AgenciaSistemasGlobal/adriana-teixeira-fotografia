@@ -61,7 +61,7 @@
                                         
                                         $urlPrepare = URL::getBase() . "server/" . $stringFile;
                                     ?>
-                                    <img src="<?php echo $urlPrepare ?>" width="360px" height="200px" class="img-responsive" title="<?php echo $album['titulo'] ?>" alt="<?php echo $album['titulo'] ?>">
+                                    <img src="<?php echo $urlPrepare ?>" width="360" height="200" class="img-responsive" title="<?php echo $album['titulo'] ?>" alt="<?php echo $album['titulo'] ?>">
                                 </div>
                                 <!-- Post Content-->
                                 <div class="post-content">
