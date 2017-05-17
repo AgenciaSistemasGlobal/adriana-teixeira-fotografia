@@ -51,7 +51,11 @@
                                             </a>
                                         </div>
                                     <?php endif ?>
-                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . $fotoByAlbum['imagem'] ? $fotoByAlbum['imagem'] : 'nophoto.svg' . '&width=360&height=150' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
+                                    <?php
+                                        //$urlPrepare = URL::getBase() . "server/thumb.php?img=";
+                                    echo $fotoByAlbum['imagem'];
+                                    ?>
+                                    <!-- <img src="<?php echo $urlPrepare . '&width=360&height=150' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>"> -->
                                 </div>
                                 <!-- Post Content-->
                                 <div class="post-content">
