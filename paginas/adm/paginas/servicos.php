@@ -58,9 +58,9 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label" for="ckeditor_full">Descrição</label>
+					<label class="col-sm-2 control-label" for="inputTexto">Descrição</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" placeholder="Descrição" name="descricao" id="ckeditor_full" required></textarea>
+						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputTexto" required></textarea>
 					</div>
 				</div>
 				<div class="form-group">
@@ -118,9 +118,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label" for="ckeditor_full">Descrição</label>
+						<label class="col-sm-2 control-label" for="inputTexto">Descrição</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Descrição" name="descricao" id="ckeditor_full" required><?php echo $servico['descricao'] ?></textarea>
+							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputTexto" required><?php echo $servico['descricao'] ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">

@@ -56,9 +56,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label" for="ckeditor_full">Texto</label>
+						<label class="col-sm-2 control-label" for="inputTexto">Texto</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Texto" name="texto" id="ckeditor_full" required><?php echo $sobre['texto'] ?></textarea>
+							<textarea class="form-control" placeholder="Texto" name="texto" id="inputTexto" required><?php echo $sobre['texto'] ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">
