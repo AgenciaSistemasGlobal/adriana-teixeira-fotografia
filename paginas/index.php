@@ -201,7 +201,8 @@
                         </ul>
                     </div>
                     <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                        <div class="fb-page" data-href="https://www.facebook.com/FacebookBrasil/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/FacebookBrasil/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FacebookBrasil/">Facebook</a></blockquote></div>
+
+                        <div class="fb-page" data-href="https://www.facebook.com/adrianateixeirafotografia/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/adrianateixeirafotografia/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/adrianateixeirafotografia/">Adriana Teixeira Fotografia</a></blockquote></div>
                     </div>
                 </div>
             </div>

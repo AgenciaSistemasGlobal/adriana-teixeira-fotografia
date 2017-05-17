@@ -49,7 +49,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <img src="<?php echo URL::getBase() . 'server/uploads/' . $fotoByAlbum['imagem'] ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
+                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . $fotoByAlbum['imagem'] . '&width=360&height=150' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
                                 </div>
                                 <!-- Post Content-->
                                 <div class="post-content">
@@ -93,13 +93,15 @@
                 <div class="col-lg-12">
                     <h2>Galeria de Fotos</h2>
                 </div>
-                <?php foreach ($albumUniqFotos as $_albumUniqFotos): ?>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a href="javascript:openModalZoom('<?php echo $_albumUniqFotos['id'] ?>')" class="thumbnail">
-                            <img src="<?php echo URL::getBase() . "server/uploads/" . $_albumUniqFotos['imagem'] ?>" alt="<?php echo $_albumUniqFotos['titulo'] ?>" title="<?php echo $_albumUniqFotos['titulo'] ?>" class="img-responsive image-modal-zoom">
-                        </a>
-                    </div>
-                <?php endforeach ?>
+                <ul class="list-inline">
+                    <?php foreach ($albumUniqFotos as $_albumUniqFotos): ?>
+                        <li>
+                            <a href="javascript:openModalZoom('<?php echo $_albumUniqFotos['id'] ?>')">
+                                <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . $_albumUniqFotos['imagem'] . '&width=150&height=150' ?>" alt="<?php echo $_albumUniqFotos['titulo'] ?>" title="<?php echo $_albumUniqFotos['titulo'] ?>" class="img-responsive image-modal-zoom thumbnail">
+                            </a>
+                        </li>
+                    <?php endforeach ?>
+                </ul>
             </div>
         </div>
     </section>
