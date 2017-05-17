@@ -52,8 +52,13 @@
                                         </div>
                                     <?php endif ?>
                                     <?php
-                                        $stringFile = "nophoto.svg";
-                                        if(!is_null($fotoByAlbum)) $stringFile = "thumb.php?img=" . $fotoByAlbum . "&width=360&height=150";
+                                        
+                                        $stringFile = "uploads/nophoto.svg";
+                                        
+                                        if(!is_null($fotoByAlbum)) {
+                                            $stringFile = "thumb.php?img=" . $fotoByAlbum . "&width=360&height=150";
+                                        }
+                                        
                                         $urlPrepare = URL::getBase() . "server/" . $stringFile;
                                     ?>
                                     <img src="<?php echo $urlPrepare ?>" class="img-responsive" title="<?php echo $album['titulo'] ?>" alt="<?php echo $album['titulo'] ?>">
