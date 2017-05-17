@@ -42,7 +42,7 @@
                             <div class="post-module"> 
                                 <!-- Thumbnail-->
                                 <div class="thumbnail">
-                                    <?php if($fotoByAlbum): ?>
+                                    <?php if(!is_null($fotoByAlbum)): ?>
                                         <div class="date transition">
                                             <a href="<?php echo URL::getBase() . 'trabalhos-realizados/' . $album['id'] . '-' . URL::removeAcentos($album['titulo'], '_') ?>">
                                                 <div class="day">
@@ -51,7 +51,7 @@
                                             </a>
                                         </div>
                                     <?php endif ?>
-                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . $fotoByAlbum['imagem'] . '&width=360&height=150' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
+                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . $fotoByAlbum['imagem'] ? $fotoByAlbum['imagem'] : 'nophoto.svg' . '&width=360&height=150' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
                                 </div>
                                 <!-- Post Content-->
                                 <div class="post-content">
