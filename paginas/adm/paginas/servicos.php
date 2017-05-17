@@ -60,7 +60,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="inputTexto">Descrição</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputTexto" required></textarea>
+						<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputTexto" rows="5" required></textarea>
 					</div>
 				</div>
 				<div class="form-group">
@@ -120,7 +120,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="inputTexto">Descrição</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputTexto" required><?php echo $servico['descricao'] ?></textarea>
+							<textarea class="form-control" placeholder="Descrição" name="descricao" id="inputTexto" rows="5" required><?php echo $servico['descricao'] ?></textarea>
 						</div>
 					</div>
 					<div class="form-group">
