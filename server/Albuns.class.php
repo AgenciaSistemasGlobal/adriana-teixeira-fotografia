@@ -61,7 +61,7 @@ class Albuns extends Conexao{
 		        SELECT TOP 1 *
 		        FROM fotos fts 
 		        WHERE fts.id_album = albs.id 
-		    ) ft
+		    )
 			WHERE albs.id_servico = ?
 		");
 		$find->bindValue(1, $_id);
