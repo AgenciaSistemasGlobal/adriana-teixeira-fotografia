@@ -181,7 +181,7 @@
 								<a href="./albuns?u=<?php echo $_album['id'] ?>" title="<?php echo $_album['titulo'] ?>">
 									<div class="panel panel-default panel-card">
 										<div class="panel-image">
-											<img src="<?php echo URL::getBase() . 'server/uploads/' . (empty($fotoByAlbum['imagem']) ? 'nophoto.svg' : $fotoByAlbum['imagem']) ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
+											<img src="<?php echo URL::getBase() . 'server/uploads/' . (empty($fotoByAlbum['imagem']) ? 'nophoto-custom.jpg' : $fotoByAlbum['imagem']) ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
 										</div>
 										<div class="panel-body">
 											<a href="?u=<?php echo $_album['id'] ?>&del=1" class="btn btn-danger pull-right">
