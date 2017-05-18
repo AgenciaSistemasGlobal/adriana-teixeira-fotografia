@@ -46,18 +46,12 @@ class Albuns extends Conexao{
 	public function findByServicos($_id){
 
 		$find = $this->pdo->prepare("
-			SELECT fts.id as idFoto,
-				fts.imagem as imagemFoto,
-				fts.titulo as imagemTitulo,
-				fts.descricao as imagemDescricao,
-				albs.titulo,
+			SELECT albs.titulo,
 				albs.descricao,
 				albs.id_servico,
 				albs.data,
 				albs.id
 			FROM albuns albs
-			INNER JOIN fotos fts 
-			ON albs.id = fts.id_album 
 			WHERE albs.id_servico = ?
 		");
 		$find->bindValue(1, $_id);
