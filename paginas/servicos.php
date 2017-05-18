@@ -77,14 +77,16 @@
                             <div class="post-module"> 
                                 <!-- Thumbnail-->
                                 <div class="thumbnail">
-                                    <div class="date transition">
-                                        <a href="<?php echo URL::getBase() . 'trabalhos-realizados/' . $album['id'] . '-' . URL::removeAcentos($album['titulo'], '_') ?>">
-                                            <div class="day">
-                                                Ver Fotos
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <img src="<?php echo URL::getBase() . 'server/uploads/' . $album['imagemFoto'] ?>" class="img-responsive" title="<?php echo $album['tituloFoto'] ?>" alt="<?php echo $album['tituloFoto'] ?>">
+                                    <?php if(!is_null($album['imagemFoto'])): ?>
+                                        <div class="date transition">
+                                            <a href="<?php echo URL::getBase() . 'trabalhos-realizados/' . $album['id'] . '-' . URL::removeAcentos($album['titulo'], '_') ?>">
+                                                <div class="day">
+                                                    Ver Fotos
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <?php endif ?>
+                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . (!is_null($album) ? $album['imagemFoto'] : 'nophoto-custom.jpg') . '&width=360&height=200' ?>" class="img-responsive" title="<?php echo $album['titulo'] ?>" alt="<?php echo $album['titulo'] ?>">
                                 </div>
                                 <!-- Post Content-->
                                 <div class="post-content">
