@@ -56,10 +56,9 @@ class Albuns extends Conexao{
 				albs.data,
 				albs.id
 			FROM albuns albs
-			LEFT OUTER JOIN fotos fts 
+			INNER JOIN fotos fts 
 			ON albs.id = fts.id_album 
 			WHERE albs.id_servico = ?
-			ORDER BY albs.id
 		");
 		$find->bindValue(1, $_id);
 		$find->execute();
