@@ -58,6 +58,12 @@ class Albuns extends Conexao{
 			FROM albuns albs
 			LEFT JOIN fotos fts 
 			ON albs.id = fts.id_album 
+			ORDER BY
+				albs.titulo,
+				albs.descricao,
+				albs.id_servico,
+				albs.data,
+				albs.id
 			WHERE albs.id_servico = ?
 		");
 		$find->bindValue(1, $_id);
