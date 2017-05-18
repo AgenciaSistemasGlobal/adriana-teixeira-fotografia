@@ -64,44 +64,46 @@
                 </div>
             </div>
             <br>
-            <div class="row">
+            <?php if(!empty($albunsByServico)): ?>
                 <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <h2>Trabalho<?php echo count($albunsByServico)>1 ? "s" : "" ?> Realizado<?php echo count($albunsByServico)>1 ? "s" : "" ?> Sobre <?php echo $servicoUniq['nome'] ?></h2>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <h2>Trabalho<?php echo count($albunsByServico)>1 ? "s" : "" ?> Realizado<?php echo count($albunsByServico)>1 ? "s" : "" ?> Sobre <?php echo $servicoUniq['nome'] ?></h2>
+                        </div>
                     </div>
-                </div>
-                <?php foreach ($albunsByServico as $album): ?>
-                    <div class="col-md-4">
-                        <div class="column"> 
-                            <!-- Post-->
-                            <div class="post-module"> 
-                                <!-- Thumbnail-->
-                                <div class="thumbnail">
-                                    <?php if(!is_null($album['imagemFoto'])): ?>
-                                        <div class="date transition">
-                                            <a href="<?php echo URL::getBase() . 'trabalhos-realizados/' . $album['id'] . '-' . URL::removeAcentos($album['titulo'], '_') ?>">
-                                                <div class="day">
-                                                    Ver Fotos
-                                                </div>
-                                            </a>
+                    <?php foreach ($albunsByServico as $album): ?>
+                        <div class="col-md-4">
+                            <div class="column"> 
+                                <!-- Post-->
+                                <div class="post-module"> 
+                                    <!-- Thumbnail-->
+                                    <div class="thumbnail">
+                                        <?php if(!is_null($album['imagemFoto'])): ?>
+                                            <div class="date transition">
+                                                <a href="<?php echo URL::getBase() . 'trabalhos-realizados/' . $album['id'] . '-' . URL::removeAcentos($album['titulo'], '_') ?>">
+                                                    <div class="day">
+                                                        Ver Fotos
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        <?php endif ?>
+                                        <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . (!is_null($album['imagemFoto']) ? $album['imagemFoto'] : 'nophoto-custom.jpg') . '&width=360&height=200' ?>" class="img-responsive" title="<?php echo $album['titulo'] ?>" alt="<?php echo $album['titulo'] ?>">
+                                    </div>
+                                    <!-- Post Content-->
+                                    <div class="post-content">
+                                        <div class="category"><?php echo $album['nomeServico'] ?></div>
+                                        <h1 class="title"><?php echo $album['titulo'] ?></h1>
+                                        <p class="description"><?php echo $album['descricao'] ?></p>
+                                        <div class="post-meta">
+                                            <span class="timestamp"><i class="fa fa-calendar"></i> <?php echo $album['data'] ?></span>
                                         </div>
-                                    <?php endif ?>
-                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . (!is_null($album['imagemFoto']) ? $album['imagemFoto'] : 'nophoto-custom.jpg') . '&width=360&height=200' ?>" class="img-responsive" title="<?php echo $album['titulo'] ?>" alt="<?php echo $album['titulo'] ?>">
-                                </div>
-                                <!-- Post Content-->
-                                <div class="post-content">
-                                    <div class="category"><?php echo $album['nomeServico'] ?></div>
-                                    <h1 class="title"><?php echo $album['titulo'] ?></h1>
-                                    <p class="description"><?php echo $album['descricao'] ?></p>
-                                    <div class="post-meta">
-                                        <span class="timestamp"><i class="fa fa-calendar"></i> <?php echo $album['data'] ?></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach ?>
-            </div>
+                    <?php endforeach ?>
+                </div>
+            <?php endif ?>
         </div>
     </section>
 <?php endif ?>
