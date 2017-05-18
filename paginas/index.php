@@ -9,6 +9,10 @@
 
     $Contato = new Contato();
     $contato = $Contato->find();
+
+    if(!file_exists("paginas/" . $modulo . ".php")) {
+        header("HTTP/1.0 404 Not Found");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
