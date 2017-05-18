@@ -86,7 +86,7 @@
                                             </a>
                                         </div>
                                     <?php endif ?>
-                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . (!is_null($album) ? $album['imagemFoto'] : 'nophoto-custom.jpg') . '&width=360&height=200' ?>" class="img-responsive" title="<?php echo $album['titulo'] ?>" alt="<?php echo $album['titulo'] ?>">
+                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . (!is_null($album['imagemFoto']) ? $album['imagemFoto'] : 'nophoto-custom.jpg') . '&width=360&height=200' ?>" class="img-responsive" title="<?php echo $album['titulo'] ?>" alt="<?php echo $album['titulo'] ?>">
                                 </div>
                                 <!-- Post Content-->
                                 <div class="post-content">
