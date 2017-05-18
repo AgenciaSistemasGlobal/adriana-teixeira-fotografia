@@ -46,11 +46,7 @@ class Albuns extends Conexao{
 	public function findByServicos($_id){
 
 		$find = $this->pdo->prepare("
-			SELECT srvs.id as idServico,
-				srvs.imagem as imagemServico,
-				srvs.nome as nomeServico,
-				srvs.descricao as descricaoServico,
-				fts.id as idFoto,
+			SELECT fts.id as idFoto,
 				fts.imagem as imagemFoto,
 				fts.titulo as imagemTitulo,
 				fts.descricao as imagemDescricao,
@@ -60,8 +56,6 @@ class Albuns extends Conexao{
 				albs.data,
 				albs.id
 			FROM albuns albs
-			INNER JOIN servicos srvs
-			ON albs.id_servico = srvs.id 
 			LEFT JOIN fotos fts 
 			ON albs.id = fts.id_album 
 			WHERE albs.id_servico = ?
