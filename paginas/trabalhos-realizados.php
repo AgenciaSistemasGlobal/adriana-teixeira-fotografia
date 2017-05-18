@@ -51,17 +51,7 @@
                                             </a>
                                         </div>
                                     <?php endif ?>
-                                    <?php
-                                        
-                                        $stringFile = "uploads/nophoto.svg";
-                                        
-                                        if(!is_null($fotoByAlbum)) {
-                                            $stringFile = "thumb.php?img=" . $fotoByAlbum["imagem"] . "&width=360&height=200";
-                                        }
-                                        
-                                        $urlPrepare = URL::getBase() . "server/" . $stringFile;
-                                    ?>
-                                    <img src="<?php echo $urlPrepare ?>" width="360" height="200" class="img-responsive" title="<?php echo $album['titulo'] ?>" alt="<?php echo $album['titulo'] ?>">
+                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . (!is_null($fotoByAlbum) ? $fotoByAlbum['imagem'] : 'nophoto.svg') . '&width=360&height=150' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
                                 </div>
                                 <!-- Post Content-->
                                 <div class="post-content">
