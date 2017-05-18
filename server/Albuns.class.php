@@ -56,12 +56,8 @@ class Albuns extends Conexao{
 				albs.data,
 				albs.id
 			FROM albuns albs
-			OUTER APPLY
-		    (
-		        SELECT TOP 1 *
-		        FROM fotos fts 
-		        WHERE fts.id_album = albs.id 
-		    )
+			LEFT JOIN fotos fts 
+			ON albs.id = fts.id_album 
 			WHERE albs.id_servico = ?
 		");
 		$find->bindValue(1, $_id);
