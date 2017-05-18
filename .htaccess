@@ -1,8 +1,4 @@
-
 <IfModule mod_rewrite.c>
-	
-	ErrorDocument 404 /paginas/404.php
-
     RewriteEngine On
 
 
