@@ -51,7 +51,7 @@
                                             </a>
                                         </div>
                                     <?php endif ?>
-                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . (!is_null($fotoByAlbum) ? $fotoByAlbum['imagem'] : 'nophoto-custom.jpg') . '&width=360&height=150' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
+                                    <img src="<?php echo URL::getBase() . 'server/thumb.php?img=' . (!is_null($fotoByAlbum) ? $fotoByAlbum['imagem'] : 'nophoto-custom.jpg') . '&width=360&height=200' ?>" class="img-responsive" title="<?php echo $fotoByAlbum['titulo'] ?>" alt="<?php echo $fotoByAlbum['titulo'] ?>">
                                 </div>
                                 <!-- Post Content-->
                                 <div class="post-content">
