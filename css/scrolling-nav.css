@@ -628,7 +628,7 @@ body.internas {
   bottom: 0;
   background: #FFFFFF;
   width: 100%;
-    padding: 0 30px;
+    padding: 22px 30px;
   -webkti-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1109,7 +1109,4 @@ footer a:hover {
     .top-nav-collapse {
       background-color: #fff;
     }
-}
-.lazy-load {
-    background: url("http://www.mozart.it/images/preloader.gif") center center no-repeat;
 }
