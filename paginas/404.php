@@ -1,4 +1,4 @@
-<section style="height: calc(100% - 377)">
+<section style="height: calc(100% - 377px)">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
